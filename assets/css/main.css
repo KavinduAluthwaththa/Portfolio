@@ -711,44 +711,103 @@ section,
 /*--------------------------------------------------------------
 # Skills Section - Dark Mode
 --------------------------------------------------------------*/
+
+.skills .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .skills .progress {
-  height: 60px;
+  height: auto;
   display: block;
-  background: none;
-  border-radius: 8px;
-  border: 1px none;
-  padding: 20px;
+  background: transparent;
+  border: transparent;
   margin-bottom: 20px;
+  text-align: center;
+  flex: 0 0 calc(20% - 16px);
+  min-width: 150px;
 }
 
 .skills .progress .skill {
   color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
   text-transform: uppercase;
-  display: block;
   font-weight: 600;
   font-family: var(--heading-font);
+  font-size: 14px;
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+/* Skills icon/image styling */
+.skills .progress .skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  margin: 0 auto 15px auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.skills .progress .skill-icon:hover {
+  transform: scale(1.1);
+  border-color: color-mix(in srgb, var(--accent-color), white 25%);
+}
+
+/* Alternative: If using icon fonts instead of images */
+.skills .progress .skill-icon-font {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
   color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-color);
 }
 
-.skills .progress-bar-wrap {
-  background: #333;
-  height: 10px;
-  border-radius: 5px;
+.skills .progress .skill-icon-font:hover {
+  transform: scale(1.1);
+  background: var(--accent-color);
+  color: var(--contrast-color);
 }
 
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
-  border-radius: 5px;
+/* Skills level indicator */
+.skills .progress .skill-level {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+  .skills .progress {
+    flex: 0 0 calc(25% - 15px); /* 4 items per row on medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .skills .progress {
+    flex: 0 0 calc(33.333% - 14px); /* 3 items per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .skills .progress {
+    flex: 0 0 calc(50% - 10px); /* 2 items per row on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills .progress {
+    flex: 0 0 100%; /* 1 item per row on small mobile */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1113,7 +1172,6 @@ section,
 --------------------------------------------------------------*/
 .contact .info-wrap {
   background-color: var(--surface-color);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   padding: 30px;
   border-radius: 8px;
   border: 1px solid #333;
@@ -1168,12 +1226,11 @@ section,
 }
 
 .contact .php-email-form {
-  background-color: var(--surface-color);
+  background-color: transparent;
   height: 100%;
   padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  border: 1px solid #333;
+  border: none;
 }
 
 @media (max-width: 575px) {
