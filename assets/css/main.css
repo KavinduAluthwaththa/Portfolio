@@ -738,7 +738,6 @@ section,
   font-size: 14px;
 }
 
-/* Skills icon/image styling */
 .skills .progress .skill-icon {
   width: 60px;
   height: 60px;
@@ -750,57 +749,27 @@ section,
   transition: all 0.3s ease;
 }
 
-.skills .progress .skill-icon:hover {
-  transform: scale(1.1);
-  border-color: color-mix(in srgb, var(--accent-color), white 25%);
-}
-
-/* Alternative: If using icon fonts instead of images */
-.skills .progress .skill-icon-font {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px auto;
-  font-size: 24px;
-  transition: all 0.3s ease;
-  border: 2px solid var(--accent-color);
-}
-
 .skills .progress .skill-icon-font:hover {
   transform: scale(1.1);
   background: var(--accent-color);
   color: var(--contrast-color);
 }
 
-/* Skills level indicator */
-.skills .progress .skill-level {
-  color: var(--accent-color);
-  font-weight: 600;
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-/* Responsive design for smaller screens */
 @media (max-width: 1200px) {
   .skills .progress {
-    flex: 0 0 calc(25% - 15px); /* 4 items per row on medium screens */
+    flex: 0 0 calc(25% - 15px); 
   }
 }
 
 @media (max-width: 992px) {
   .skills .progress {
-    flex: 0 0 calc(33.333% - 14px); /* 3 items per row on tablets */
+    flex: 0 0 calc(33.333% - 14px); 
   }
 }
 
 @media (max-width: 768px) {
   .skills .progress {
-    flex: 0 0 calc(50% - 10px); /* 2 items per row on mobile */
+    flex: 0 0 calc(50% - 10px); 
   }
 }
 
@@ -1006,7 +975,7 @@ section,
   background-color: var(--surface-color);
   padding: 30px;
   border-radius: 8px;
-  border: 1px solid #333;
+  border: 1px solid hsl(0, 0%, 20%);
   transition: all 0.3s ease;
 }
 
