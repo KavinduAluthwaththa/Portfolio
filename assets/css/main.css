@@ -1010,12 +1010,6 @@ section,
   transition: all 0.3s ease;
 }
 
-.services .service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border-color: var(--accent-color);
-}
-
 .services .service-item .icon {
   background: var(--accent-color);
   display: flex;
