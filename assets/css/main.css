@@ -522,7 +522,7 @@ section,
 # Global Section Titles - Dark Mode
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   position: relative;
 }
 
@@ -547,7 +547,6 @@ section,
 }
 
 .section-title p {
-  margin-bottom: 0;
   color: #b0b0b0;
 }
 
