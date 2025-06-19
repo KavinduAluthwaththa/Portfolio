@@ -991,18 +991,17 @@ section,
   color: rgba(255, 255, 255, 0.8);
 }
 
-.portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   position: absolute;
-  left: calc(50% - 40px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-size: 26px;
-  top: calc(50% - 14px);
   color: #fff;
   transition: 0.3s;
-  line-height: 1.2;
+  line-height: 1;
 }
 
-.portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
   color: var(--accent-color);
 }
