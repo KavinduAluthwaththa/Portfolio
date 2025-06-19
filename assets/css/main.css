@@ -707,11 +707,42 @@ section,
   font-family: var(--heading-font);
   font-size: 14px;
 }
-
 /*--------------------------------------------------------------
-# Skills Section - Dark Mode
+# Skills Section - Dark Mode (Grouped Categories)
 --------------------------------------------------------------*/
 
+/* Skills Category Styling */
+.skills-category {
+  margin-bottom: 50px;
+}
+
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.category-title:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: transparent;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+/* Skills Grid Layout */
 .skills .row {
   display: flex;
   flex-wrap: wrap;
@@ -723,15 +754,19 @@ section,
   height: auto;
   display: block;
   background: transparent;
-  border: transparent;
-  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 25px 20px;
+  margin-bottom: 0;
   text-align: center;
   flex: 0 0 calc(20% - 16px);
   min-width: 150px;
+  transition: all 0.3s ease;
 }
 
 .skills .progress .skill {
   color: var(--heading-color);
+  padding: 0;
+  margin: 0 0 10px 0;
   text-transform: uppercase;
   font-weight: 600;
   font-family: var(--heading-font);
@@ -739,37 +774,43 @@ section,
 }
 
 .skills .progress .skill-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  border: none;
   margin: 0 auto 15px auto;
   display: block;
   transition: all 0.3s ease;
 }
 
-.skills .progress .skill-icon-font:hover {
+.skills .progress:hover .skill-icon {
   transform: scale(1.1);
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  border-color: color-mix(in srgb, var(--accent-color), white 25%);
 }
 
+/* Responsive design for smaller screens */
 @media (max-width: 1200px) {
   .skills .progress {
-    flex: 0 0 calc(25% - 15px); 
+    flex: 0 0 calc(25% - 15px); /* 4 items per row on medium screens */
   }
 }
 
 @media (max-width: 992px) {
   .skills .progress {
-    flex: 0 0 calc(33.333% - 14px); 
+    flex: 0 0 calc(33.333% - 14px); /* 3 items per row on tablets */
+  }
+  
+  .category-title {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 768px) {
   .skills .progress {
-    flex: 0 0 calc(50% - 10px); 
+    flex: 0 0 calc(50% - 10px); /* 2 items per row on mobile */
+  }
+  
+  .category-title {
+    font-size: 22px;
   }
 }
 
@@ -777,6 +818,20 @@ section,
   .skills .progress {
     flex: 0 0 100%; /* 1 item per row on small mobile */
   }
+  
+  .category-title {
+    font-size: 20px;
+  }
+}
+
+/* Section spacing */
+.skills.section {
+  padding: 80px 0;
+}
+
+/* Enhanced visual hierarchy */
+.skills-category:first-of-type {
+  margin-top: 20px;
 }
 
 /*--------------------------------------------------------------
