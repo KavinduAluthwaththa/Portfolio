@@ -514,7 +514,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: clip;
 }
 
@@ -522,7 +522,7 @@ section,
 # Global Section Titles - Dark Mode
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -566,7 +566,6 @@ section,
 
 .hero img {
   position: absolute;
-  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -584,6 +583,7 @@ section,
 }
 
 .hero .container {
+  padding-left: 25px;
   position: relative;
   z-index: 3;
 }
@@ -712,7 +712,7 @@ section,
 
 /* Skills Category Styling */
 .skills-category {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .skills-category:last-child {
@@ -724,7 +724,7 @@ section,
   font-weight: 700;
   color: var(--heading-color);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   position: relative;
   padding-bottom: 15px;
 }
@@ -786,52 +786,6 @@ section,
   border-color: color-mix(in srgb, var(--accent-color), white 25%);
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 1200px) {
-  .skills .progress {
-    flex: 0 0 calc(25% - 15px); /* 4 items per row on medium screens */
-  }
-}
-
-@media (max-width: 992px) {
-  .skills .progress {
-    flex: 0 0 calc(33.333% - 14px); /* 3 items per row on tablets */
-  }
-  
-  .category-title {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .skills .progress {
-    flex: 0 0 calc(50% - 10px); /* 2 items per row on mobile */
-  }
-  
-  .category-title {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills .progress {
-    flex: 0 0 100%; /* 1 item per row on small mobile */
-  }
-  
-  .category-title {
-    font-size: 20px;
-  }
-}
-
-/* Section spacing */
-.skills.section {
-  padding: 80px 0;
-}
-
-/* Enhanced visual hierarchy */
-.skills-category:first-of-type {
-  margin-top: 20px;
-}
 
 /*--------------------------------------------------------------
 # Resume Section - Dark Mode
