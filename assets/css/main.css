@@ -790,7 +790,7 @@ section,
 /*--------------------------------------------------------------
 # Resume Section - Dark Mode
 --------------------------------------------------------------*/
-.resume .resume-title {
+.resume-title {
   color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
@@ -800,7 +800,7 @@ section,
   padding-bottom: 10px;
 }
 
-.resume .resume-item {
+.resume-item {
   padding: 20px;
   margin-top: 20px;
   border-left: 2px solid var(--accent-color);
@@ -811,7 +811,7 @@ section,
   margin-left: 20px;
 }
 
-.resume .resume-item h4 {
+.resume-item h4 {
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
@@ -820,7 +820,7 @@ section,
   margin-bottom: 10px;
 }
 
-.resume .resume-item h5 {
+.resume-item h5 {
   font-size: 16px;
   padding: 5px 15px;
   display: inline-block;
@@ -831,24 +831,24 @@ section,
   border-radius: 20px;
 }
 
-.resume .resume-item p {
+.resume-item p {
   color: #b0b0b0;
 }
 
-.resume .resume-item ul {
+.resume-item ul {
   padding-left: 20px;
 }
 
-.resume .resume-item ul li {
+.resume-item ul li {
   padding-bottom: 10px;
   color: #b0b0b0;
 }
 
-.resume .resume-item:last-child {
+.resume-item:last-child {
   padding-bottom: 0;
 }
 
-.resume .resume-item::before {
+.resume-item::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -900,78 +900,83 @@ section,
   }
 }
 
+/* Portfolio content container */
 .portfolio .portfolio-content {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
   background-color: var(--surface-color);
   border: 1px solid #333;
+  transition: all 0.3s ease;
+  height: 100%;
 }
 
+.portfolio .portfolio-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Fixed image dimensions */
 .portfolio .portfolio-content img {
-  transition: 0.3s;
   width: 100%;
-}
-
-.portfolio .portfolio-content .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 15px;
-}
-
-.portfolio .portfolio-content .portfolio-info h4 {
-  font-size: 14px;
-  padding: 5px 10px;
-  font-weight: 400;
-  color: #ffffff;
-  display: inline-block;
-  background-color: var(--accent-color);
-  border-radius: 4px;
-}
-
-.portfolio .portfolio-content .portfolio-info p {
-  position: absolute;
-  bottom: 10px;
-  text-align: center;
-  display: inline-block;
-  left: 0;
-  right: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.portfolio .portfolio-content .portfolio-info .details-link {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 26px;
-  color: #fff;
-  transition: 0.3s;
-  line-height: 1;
-}
-
-.portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
-  font-size: 34px;
-  line-height: 0;
-}
-
-.portfolio .portfolio-content:hover .portfolio-info {
-  opacity: 1;
+  height: 250px; /* Fixed height for all images */
+  object-fit: cover; /* Maintains aspect ratio while filling the container */
+  object-position: center; /* Centers the image */
+  transition: all 0.3s ease;
 }
 
 .portfolio .portfolio-content:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+/* Portfolio info overlay */
+.portfolio .portfolio-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio-content:hover .portfolio-info {
+  transform: translateY(0);
+}
+
+.portfolio .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.portfolio .portfolio-info p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.portfolio .portfolio-info .details-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.portfolio .portfolio-info .details-link:hover {
+  background: color-mix(in srgb, var(--accent-color), white 25%);
 }
 
 /*--------------------------------------------------------------
