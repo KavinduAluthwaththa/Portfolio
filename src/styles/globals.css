@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Projects and Articles image background black*/
+
+
+/* max width before main*/
+div#__next { max-width: 1900px; margin-right: auto; margin-left: auto;}
+
+/* Homepage min Height */
+.min-h-screen {min-height: 90vh;}
+
+
