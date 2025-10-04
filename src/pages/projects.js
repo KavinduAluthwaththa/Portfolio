@@ -9,7 +9,7 @@ import { HireMe2 } from "@/components/HireMe2";
 
 import proj1 from "../../public/images/projects/reportease.png";
 import proj2 from "../../public/images/projects/babycare.png";
-import proj3 from "../../public/images/projects/reportease.png";
+import proj3 from "../../public/images/projects/unicstal.png";
 import proj4 from "../../public/images/projects/reportease.png";
 
 import TransitionEffect from "@/components/TransitionEffect";
@@ -286,7 +286,7 @@ export default function Projects() {
                 type="Design & Development"
                 tools="React | TypeScript | Next.js | Supabase"
                 title="UNICSTAL - Crystal Ecommerce Website"
-                img={proj1}
+                img={proj3}
                 date="2025"
                 link="https://github.com/KavinduAluthwaththa/Unicstal"
                 github="https://github.com/KavinduAluthwaththa/Unicstal"
