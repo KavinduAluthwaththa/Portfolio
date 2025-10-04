@@ -231,7 +231,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects | By NexTemp</title>
+        <title>Projects</title>
         <meta
           name="description"
           content="NexTemp, A open-source portfolio theme built with Nextjs"
@@ -255,7 +255,7 @@ export default function Projects() {
                 title="Babycare Project"
                 img={proj2}
                 date="2023"
-                link="/projects/babycare-project"
+                link="https://github.com/KavinduAluthwaththa/Babycare-Project"
                 github="https://github.com/KavinduAluthwaththa/Babycare-Project"
               />
             </div>
@@ -266,7 +266,7 @@ export default function Projects() {
                 title="Agriculture Management Application"
                 img={proj1}
                 date="2025"
-                link="/projects/clay-gatsby-theme"
+                link="https://github.com/KavinduAluthwaththa/Capstone-Project-Frontend"
                 github="https://github.com/KavinduAluthwaththa/Capstone-Project-Frontend"
               />
             </div>
@@ -277,7 +277,7 @@ export default function Projects() {
                 title="ReportEase - Online Maintenance System"
                 img={proj1}
                 date="2025"
-                link="/projects/clay-gatsby-theme"
+                link="https://github.com/KavinduAluthwaththa/ReportEase"
                 github="https://github.com/KavinduAluthwaththa/ReportEase"
               />
             </div>
@@ -288,7 +288,7 @@ export default function Projects() {
                 title="UNICSTAL - Crystal Ecommerce Website"
                 img={proj1}
                 date="2025"
-                link="/projects/clay-gatsby-theme"
+                link="https://github.com/KavinduAluthwaththa/Unicstal"
                 github="https://github.com/KavinduAluthwaththa/Unicstal"
               />
             </div>
