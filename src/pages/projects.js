@@ -7,7 +7,10 @@ import Link from "next/link";
 import { useRef } from "react";
 import { HireMe2 } from "@/components/HireMe2";
 
-import proj1 from "../../public/images/projects/clay-theme.png";
+import proj1 from "../../public/images/projects/reportease.png";
+import proj2 from "../../public/images/projects/babycare.png";
+import proj3 from "../../public/images/projects/reportease.png";
+import proj4 from "../../public/images/projects/reportease.png";
 
 import TransitionEffect from "@/components/TransitionEffect";
 import { motion, useMotionValue } from "framer-motion";
@@ -250,7 +253,7 @@ export default function Projects() {
                 type="Design & Development"
                 tools="HTML | CSS | JavaScript | PHP | MySQL"
                 title="Babycare Project"
-                img={proj1}
+                img={proj2}
                 date="2023"
                 link="/projects/babycare-project"
                 github="https://github.com/KavinduAluthwaththa/Babycare-Project"
