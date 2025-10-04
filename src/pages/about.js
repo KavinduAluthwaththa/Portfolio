@@ -69,7 +69,7 @@ export default function About() {
                 I’m currently available for freelance work and always open to collaborating on innovative, impactful projects. Let’s build something extraordinary together!
               </p>
               <p className="my-4 font-medium">
-                P.s I'm a big fan of anime and not a real person ✌️.
+                P.s I'm a big fan of anime and a regular gamer✌️.
               </p>
             </div>
             <div
