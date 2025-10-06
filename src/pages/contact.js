@@ -21,26 +21,21 @@ export default function About() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const myForm = e.target;
-    const formData = new FormData(myForm);
     try {
-      const response = await fetch("/", {
+      const response = await fetch("https://formspree.io/f/xanjpbvd", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "application/json",
+          "Content-Type": "application/json",
         },
-        body: new URLSearchParams(formData).toString(),
+        body: JSON.stringify(formData),
       });
-
       if (response.ok) {
-        // Handle success, e.g., redirect to a thank you page
         router.push("/thanks");
       } else {
-        // Handle error
         console.error("Form submission failed!", response);
       }
     } catch (error) {
-      // Handle error
       console.error("An error occurred during form submission:", error);
     }
   };
@@ -85,19 +80,9 @@ export default function About() {
                   <form
                     name="contact-form"
                     method="POST"
+                    action="https://formspree.io/f/xanjpbvd"
                     onSubmit={handleSubmit}
                   >
-                    <input
-                      type="hidden"
-                      name="form-name"
-                      value="contact-form"
-                    />
-                    <p className="hidden">
-                      <label>
-                        Name
-                        <input name="bot-field" />
-                      </label>
-                    </p>
                     <div className="col-span-1 p-2">
                       <label className="block text-sm font-medium text-dark dark:text-light">
                         Your Name:
