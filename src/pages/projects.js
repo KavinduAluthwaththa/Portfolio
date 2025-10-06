@@ -11,6 +11,7 @@ import proj1 from "../../public/images/projects/reportease.png";
 import proj2 from "../../public/images/projects/babycare.png";
 import proj3 from "../../public/images/projects/unicstal.png";
 import proj4 from "../../public/images/projects/reportease.png";
+import proj5 from "../../public/images/projects/agrovista.png";
 
 import TransitionEffect from "@/components/TransitionEffect";
 import { motion, useMotionValue } from "framer-motion";
@@ -274,7 +275,7 @@ export default function Projects() {
               <Project
                 type="Design & Development"
                 tools="HTML | CSS | Blade | Laravel | MySQL"
-                title="ReportEase - Online Maintenance System"
+                title="ReportEase"
                 img={proj1}
                 date="2025"
                 link="/projects/reportease"
@@ -285,11 +286,22 @@ export default function Projects() {
               <Project
                 type="Design & Development"
                 tools="React | TypeScript | Next.js | Supabase"
-                title="UNICSTAL - Crystal Ecommerce Website"
+                title="UNICSTAL"
                 img={proj3}
                 date="2025"
                 link="projects/unicstal"
                 github="https://github.com/KavinduAluthwaththa/Unicstal"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Design & Development"
+                tools="HTML | CSS | JavaScript | PHP | MySQL"
+                title="Agrovista"
+                img={proj5}
+                date="2025"
+                link="projects/agrovista"
+                github="https://github.com/KavinduAluthwaththa/Agrovista"
               />
             </div>
           </div>
