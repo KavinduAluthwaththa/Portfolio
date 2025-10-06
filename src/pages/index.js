@@ -31,7 +31,7 @@ export default function Home() {
               />
               <div className="flex w-1/2 w-full items-center items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
                 <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-5xl xl:!text-4xl lg:!text-4xl md:!text-5xl sm:!text-3xl">
-                  Running on coffee, passion, and a passion for coding.
+                  Running on Curiosity and Coffee.
                 </h2>
               </div>
 
@@ -62,6 +62,9 @@ export default function Home() {
                   projects
                 </Link>
               </div>
+            </div>            
+            <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
+
             </div>
           </div>
         </Layout>
