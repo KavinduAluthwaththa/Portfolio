@@ -18,8 +18,9 @@ const Skills = () => {
       skills: [
         { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
         { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+        { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
         { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-        { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+        { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' }
       ],
     },
     {
@@ -57,6 +58,7 @@ const Skills = () => {
         { name: 'Photoshop', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg' },
         { name: 'Illustrator', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-original.svg' },
         { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+        { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' }
       ],
     },
   ];
@@ -66,12 +68,12 @@ const Skills = () => {
       <h2 className="font-bold text-9xl mt-64 w-full text-center md:text-6xl md:mt-32">
         Skills
       </h2>
-      <div className="py-12 px-4">
-        <div className="max-w-5xl ">
+      <div className="my-64">
+        <div className="">
           {skillSections.map((section) => (
             <div key={section.title} className="mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-dark dark:text-light text-left">{section.title}</h3>
-              <div className="grid grid-cols-7 sm:grid-cols-5 md:grid-cols-7 gap-4">
+              <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg mb-5">{section.title}</h3>
+              <div className="grid grid-cols-10 sm:grid-cols-5 md:grid-cols-7 gap-4">
                 {section.skills.map((skill) => (
                   <div key={skill.name} className="flex flex-col items-center justify-center aspect-square">
                     <div className="w-16 h-16 mb-3 mx-auto">
