@@ -14,7 +14,7 @@ export default function Home() {
         <title>Kavindu Aluthwaththa</title>
         <meta
           name="description"
-          content="Next Portfolio, A open-source portfolio theme built with Nextjs"
+          content="Index Page of Kavindu Aluthwaththa Portfolio"
         />
       </Head>
 

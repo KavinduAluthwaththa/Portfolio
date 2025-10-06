@@ -48,10 +48,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>NexTemp Built with Nextjs</title>
+        <title>Contact Us</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Contat Page of Kavindu Aluthwaththa Portfolio"
         />
       </Head>
 
@@ -61,8 +61,7 @@ export default function About() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Begin Today,
-I'm One Message Away 👋"
+            text="Let's Start Today"
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 

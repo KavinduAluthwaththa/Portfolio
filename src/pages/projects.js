@@ -234,7 +234,7 @@ export default function Projects() {
         <title>Projects</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Projects Page of Kavindu Aluthwaththa Portfolio"
         />
       </Head>
 
@@ -255,7 +255,7 @@ export default function Projects() {
                 title="Babycare Project"
                 img={proj2}
                 date="2023"
-                link="https://github.com/KavinduAluthwaththa/Babycare-Project"
+                link="/projects/babycare"
                 github="https://github.com/KavinduAluthwaththa/Babycare-Project"
               />
             </div>
@@ -263,10 +263,10 @@ export default function Projects() {
               <Project
                 type="Design & Development"
                 tools=".Net | C# | Flutter | Dart | PostgreSQL"
-                title="Agriculture Management Application"
+                title="Smart Agriculture App"
                 img={proj1}
                 date="2025"
-                link="https://github.com/KavinduAluthwaththa/Capstone-Project-Frontend"
+                link="/projects/capstone"
                 github="https://github.com/KavinduAluthwaththa/Capstone-Project-Frontend"
               />
             </div>
@@ -277,7 +277,7 @@ export default function Projects() {
                 title="ReportEase - Online Maintenance System"
                 img={proj1}
                 date="2025"
-                link="https://github.com/KavinduAluthwaththa/ReportEase"
+                link="/projects/reportease"
                 github="https://github.com/KavinduAluthwaththa/ReportEase"
               />
             </div>
@@ -288,7 +288,7 @@ export default function Projects() {
                 title="UNICSTAL - Crystal Ecommerce Website"
                 img={proj3}
                 date="2025"
-                link="https://github.com/KavinduAluthwaththa/Unicstal"
+                link="projects/unicstal"
                 github="https://github.com/KavinduAluthwaththa/Unicstal"
               />
             </div>

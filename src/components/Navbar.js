@@ -2,8 +2,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import {
-  MediumIcon,
-  DevIcon,
   GithubIcon,
   LinkedInIcon,
   MoonIcon,
@@ -109,6 +107,7 @@ const Navbar = () => {
           <CustomLink className="mr-4" href="/" title="Home" />
           <CustomLink className="mx-4" href="/about" title="About" />
           <CustomLink className="mx-4" href="/projects" title="Projects" />
+          <CustomLink className="mx-4" href="/contact" title="Contact" />
         </nav>
         <nav
           className="flex items-center justify-center flex-wrap lg:mt-2

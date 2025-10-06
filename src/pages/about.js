@@ -42,7 +42,7 @@ export default function About() {
         <title>About</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="About Page of Kavindu Aluthwaththa Portfolio"
         />
       </Head>
 
