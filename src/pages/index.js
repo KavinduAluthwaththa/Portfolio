@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
-import profilePic from "../../public/images/profile/kavindu.jpg";
+import profilePic from "../../public/images/profile/mainimg.png";
 
 export default function Home() {
   return (
@@ -24,6 +24,18 @@ export default function Home() {
       >
         <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
+            <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
+              <Image
+                src={profilePic}
+                alt="Kavindu Aluthwaththa"
+                className="w-full h-auto lg:hidden md:inline-block md:w-full rounded-2xl"
+                priority
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw"
+              />
+            </div>
+
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
                 text="Hey, I’m Kavindu"
@@ -62,9 +74,6 @@ export default function Home() {
                   projects
                 </Link>
               </div>
-            </div>            
-            <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
-
             </div>
           </div>
         </Layout>
