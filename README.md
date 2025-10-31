@@ -1,8 +1,6 @@
-# NexTemp | A Next.js Personal Web App
+# Personal Portfolio
 
-![NexTemp - A Next.js Personal Web App](https://github.com/lilxyzz/nextemp/blob/main/public/NexTemp-cover.png)
-
-NexTemp - A bespoke **template** for your **next** web project. NexTemp is a personal portfolio and blog theme built around Next.js. It features a modern, clean, and responsive design, perfect for developers or anyone looking to showcase their work and ideas. For more themes and updates, stay tuned.
+This is a personal portfolio and blog theme built around Next.js. It features a modern, clean, and responsive design, perfect for developers or anyone looking to showcase their work and ideas.
 
 ## 📚 Tech Stack
 Next.js 14+
@@ -13,62 +11,92 @@ Framer Motion 11+
 ## ✨ Features
 - Dark and light color mode 
 - Reusable Components
-- Blog post creation
-- Animations with Framer Motion
-- Tailwind CSS integration
-- Mobile-first responsive layout
-- Sitemap support
-- 95+ Lighthouse
+# Portfolio — Kavindu Aluthwaththa
 
-## 🚀 NexTemp Pro Coming Soon
-**Features**
-- SEO optimised 
-- Post tags and categories
-- Integration with Hashnode CMS for easy post publishing
-- PWA support
-  
+This repository contains a personal portfolio website built with Next.js, Tailwind CSS and Framer Motion. It showcases projects, experience, and contact information.
 
-### 🛠️ Requirements
+## Tech stack
+- Next.js 14
+- React 18
+- Tailwind CSS 3
+- Framer Motion
 
-- Node 18+
-  - https://nodejs.org/en
-- Yarn
-  - https://classic.yarnpkg.com/en/docs/getting-started
+## Features
+- Responsive, mobile-first layout
+- Dark / light theme support
+- Reusable, accessible components
+- Project pages and contact form
+- Sitemap generation (via `next-sitemap`)
 
+## Requirements
+- Node.js 18+ (or a compatible Node 18.x runtime)
+- npm (or Yarn) — either package manager works
 
+## Install & run (development)
+Clone the repository and install dependencies:
 
-## 🎬 Getting Started
+```powershell
+git clone https://github.com/KavinduAluthwaththa/Portfolio.git
+cd Portfolio
+npm install
+# or: yarn
+```
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/lilxyzz/nextemp.git
-    ```
+Start the dev server:
 
-2. Navigate into the repository:
-    ```bash
-    cd NexTemp
-    ```
+```powershell
+npm run dev
+# or: yarn dev
+```
 
-3. Install the dependencies:
-    ```bash
-    yarn
-    ```
+Open http://localhost:3000 in your browser.
 
-4. Run the development server:
-    ```bash
-    yarn dev
-    ```
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build & production
+To create a production build and preview the production server:
 
+```powershell
+npm run build
+npm run start
+# or: yarn build && yarn start
+```
 
-#### 🙏 Thanks
-If you like this theme, don't forget to give it a ⭐.
+This project also runs `next-sitemap` after build (see `postbuild` script) to generate a sitemap.
 
-#### 🤝 Contributing
-Got enhancements you envision? Contributions are welcome! Fork the repo, push your changes, and submit a pull request. Let's make this theme better, together.
+## Available scripts
+Taken from `package.json`:
 
-#### 👾 Issues
-For any challenges encountered, please feel free to report issues through our issue tracker.
+- `npm run dev` — run Next.js in development mode
+- `npm run build` — build for production
+- `npm run postbuild` — run sitemap generation (runs automatically after `build`)
+- `npm run start` — start the production server
+- `npm run lint` — run Next.js/ESLint checks
 
-#### 📝 License
-This project is open source and available under the MIT License.
+## Project structure (high level)
+
+- `src/components/` — UI and layout components (Navbar, Footer, AnimatedText, etc.)
+- `src/pages/` — Next.js pages (index, about, projects, contact, ...)
+- `public/` — static assets (images, manifest)
+- `styles/` — global and module CSS
+
+## Contributing
+Feel free to open issues or submit PRs for bugfixes and enhancements. When contributing, please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Open a pull request with a clear description of changes
+
+## Notes / Next steps
+- Add a license file if you want to make licensing explicit (e.g. MIT).
+- Add a brief AUTHORS or CONTACT section with your preferred contact method.
+
+## Contact
+If you want to reach me, add your preferred contact details here (email, LinkedIn or GitHub profile).
+
+---
+
+If you'd like, I can also:
+- add a small Contributors section or License file,
+- generate an example Deployment/VERCEL section, or
+- include screenshots and a demo link.
+
+Please tell me how you'd like the contact/license info to appear and I will update the README accordingly.
