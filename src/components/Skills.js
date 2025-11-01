@@ -66,18 +66,19 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="font-bold text-9xl mt-64 w-full text-center md:text-6xl md:mt-32">
+      <div className="my-64 md:my-32 sm:my-16">
+        
+      <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
         Skills
       </h2>
-      <div className="my-64">
         <div className="">
           {skillSections.map((section) => (
-            <div key={section.title} className="mb-12">
-              <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg mb-5">{section.title}</h3>
-              <div className="grid grid-cols-10 sm:grid-cols-5 md:grid-cols-7 gap-4">
+            <div key={section.title} className="mb-12 md:mb-8 sm:mb-6">
+              <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg mb-5 sm:mb-3">{section.title}</h3>
+              <div className="grid grid-cols-10 lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-4 xs:grid-cols-3 gap-6 md:gap-4 sm:gap-3">
                 {section.skills.map((skill) => (
-                  <div key={skill.name} className="flex flex-col items-center justify-center aspect-square">
-                    <div className="w-16 h-16 mb-3 mx-auto relative">
+                  <div key={skill.name} className="flex flex-col items-center justify-start">
+                    <div className="w-16 h-16 md:w-12 md:h-12 sm:w-10 sm:h-10 xs:w-8 xs:h-8 mb-2 sm:mb-1 mx-auto relative flex-shrink-0">
                       {typeof skill.icon === 'string' ? (
                         <Image
                           src={skill.icon}
@@ -91,18 +92,12 @@ const Skills = () => {
                             src={skill.icon.light}
                             alt={skill.name}
                             fill
-                            className="object-contain block dark:hidden"
-                          />
-                          <Image
-                            src={skill.icon.dark}
-                            alt={skill.name}
-                            fill
-                            className="object-contain hidden dark:block"
+                            className="object-contain block"
                           />
                         </>
                       )}
                     </div>
-                    <span className="text-dark dark:text-light text-m font-semibold text-center tracking-wide mt-3">
+                    <span className="text-light text-sm md:text-xs sm:text-[10px] xs:text-[9px] font-semibold text-center tracking-wide leading-tight break-words w-full px-1">
                       {skill.name}
                     </span>
                   </div>
