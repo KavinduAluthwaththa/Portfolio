@@ -9,7 +9,6 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -18,10 +17,10 @@ module.exports = {
       colors: {
         dark: "#1b1b1b",
         light: "#f5f5f5",
-        primary: "#2545d0",
-        primaryDark: "#4377ee",
-        lightGreen: "#4377ee",
-        slideGreen: "#2439a9",
+        primary: "#f5f5f5",
+        primaryDark: "#f5f5f5",
+        lightGreen: "#f5f5f5",
+        slideGreen: "#f5f5f5",
       },
       animation: {
         "spin-slow": "spin 8s linear infinite",

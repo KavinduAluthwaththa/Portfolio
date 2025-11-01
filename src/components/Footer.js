@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import Layout from "./Layout";
+import { CiCoffeeCup } from "react-icons/ci";
+import { FaCode } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -12,8 +14,8 @@ const Footer = () => {
       <Layout className="py-8 flex items-center justify-center lg:flex-col lg:py-6">
   <span>&copy; {new Date().getFullYear()}</span>
 
-  <div className="flex items-center lg:py-2 ml-2">
-    Powered by Clean Code and Caffeine ☕
+  <div className="flex items-center justify-center gap-2 ml-2 lg:ml-0 lg:mt-2">
+    Powered by Clean <FaCode className="mx-1" /> and <CiCoffeeCup className="mx-1" />
   </div>
 </Layout>
 
