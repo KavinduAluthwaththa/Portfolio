@@ -90,15 +90,16 @@ export default function Home() {
                   Get To Know Me
                 </Link>
                 <Link
-                  href="/projects/"
-                  target={"_self"}
+                  href="/cv.pdf"
+                  target={"_blank"}
+                  download
                   className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
             capitalize text-dark hover:border-light hover:bg-dark hover:text-light 
             dark:bg-dark dark:text-light dark:hover:bg-light dark:hover:text-dark
             md:p-2 md:px-4 md:text-base
              `}
                 >
-                  projects
+                  Download CV
                 </Link>
               </div>
             </div>
