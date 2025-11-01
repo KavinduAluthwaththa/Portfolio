@@ -65,8 +65,8 @@ export default function About() {
                 BIOGRAPHY
               </h2>
               <p className="font-medium ">
-                I'm a Kavindu, passionate and detail-oriented developer committed to delivering high-quality, timely solutions. I focus on building efficient, user-friendly applications with clean code and intuitive interfaces. Continuously learning and embracing new challenges, I strive to enhance my skills and stay ahead in a rapidly evolving tech landscape.
-                I'm currently available for freelance work and always open to collaborating on innovative, impactful projects. Let's build something extraordinary together!
+                I&apos;m a Kavindu, passionate and detail-oriented developer committed to delivering high-quality, timely solutions. I focus on building efficient, user-friendly applications with clean code and intuitive interfaces. Continuously learning and embracing new challenges, I strive to enhance my skills and stay ahead in a rapidly evolving tech landscape.
+                I&apos;m currently available for freelance work and always open to collaborating on innovative, impactful projects. Let&apos;s build something extraordinary together!
               </p>
               <p className="my-4 font-medium">
                 P.s I&apos;m a big fan of anime and a regular gamer✌️.

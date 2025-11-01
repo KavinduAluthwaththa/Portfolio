@@ -70,7 +70,7 @@ export default function About() {
               <div className="w-full"></div>
               <p className="">
                 My inbox is always open. Whether you have a question or just
-                want to say hello, I'll try my best to get back to you! Feel
+                want to say hello, I&apos;ll try my best to get back to you! Feel
                 free to message me about any relevant project updates.
               </p>
             </div>
