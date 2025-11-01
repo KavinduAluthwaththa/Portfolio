@@ -5,7 +5,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { HireMe2 } from "@/components/HireMe2";
 
 import proj1 from "../../public/images/projects/reportease.png";
 import proj2 from "../../public/images/projects/babycare.png";
@@ -329,7 +328,6 @@ export default function Projects() {
                 Get To Know Me
               </Link>
             </div>
-            <HireMe2 />
           </div>
         </Layout>
       </main>
