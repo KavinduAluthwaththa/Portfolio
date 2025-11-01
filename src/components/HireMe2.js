@@ -26,7 +26,7 @@ bg-dark rounded-full text-white text-[10px] w-12 h-12 font-semibold hover:bg-lig
 dark:hover:text-light dark:hover:border-light
 "
         >
-          Let's Go
+          Let&apos;s Go
         </Link>
       </div>
     </div>
