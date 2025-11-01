@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Skills = () => {
   const skillSections = [
@@ -76,24 +77,27 @@ const Skills = () => {
               <div className="grid grid-cols-10 sm:grid-cols-5 md:grid-cols-7 gap-4">
                 {section.skills.map((skill) => (
                   <div key={skill.name} className="flex flex-col items-center justify-center aspect-square">
-                    <div className="w-16 h-16 mb-3 mx-auto">
+                    <div className="w-16 h-16 mb-3 mx-auto relative">
                       {typeof skill.icon === 'string' ? (
-                        <img
+                        <Image
                           src={skill.icon}
                           alt={skill.name}
-                          className="w-full h-full object-contain"
+                          fill
+                          className="object-contain"
                         />
                       ) : (
                         <>
-                          <img
+                          <Image
                             src={skill.icon.light}
                             alt={skill.name}
-                            className="w-full h-full object-contain block dark:hidden"
+                            fill
+                            className="object-contain block dark:hidden"
                           />
-                          <img
+                          <Image
                             src={skill.icon.dark}
                             alt={skill.name}
-                            className="w-full h-full object-contain hidden dark:block"
+                            fill
+                            className="object-contain hidden dark:block"
                           />
                         </>
                       )}

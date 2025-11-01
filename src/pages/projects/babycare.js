@@ -75,18 +75,18 @@ export default function About() {
               </h3>
               <div classNname="w-full border-2 border-solid border-light bg-light"></div>
               <p className="">
-                Baby Care Reminder System, a reliable solution for staying on top of your baby's vaccination schedule. 
+                Baby Care Reminder System, a reliable solution for staying on top of your baby&apos;s vaccination schedule. 
                 Say goodbye to missed injections and unnecessary worries! Our automated system sends timely reminders 
                 to ensure your baby receives the necessary vaccinations, while also providing valuable information and support. 
-                Join us in safeguarding your baby's health and well-being every step of the way.
+                Join us in safeguarding your baby&apos;s health and well-being every step of the way.
               </p>
               <h4 className="mt-4 text-lg font-800 capitalize text-dark/75 dark:text-light/75">
                 Timely Injections for Healthy Beginnings
               </h4>
               <p className="my-4">
                 Stay informed and empowered with our vaccination information hub. Learn about the importance of vaccinations, 
-                recommended schedules for your baby's first year, and benefits of each vaccine. Access reliable resources to address concerns and 
-                make informed decisions about your child's health, ensuring their well-being with confidence.
+                recommended schedules for your baby&apos;s first year, and benefits of each vaccine. Access reliable resources to address concerns and 
+                make informed decisions about your child&apos;s health, ensuring their well-being with confidence.
               </p>
 
               <div className="mt-2 flex items-center grid-cols-8 gap-4 sm:gap-8">
