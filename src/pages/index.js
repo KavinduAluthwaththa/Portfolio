@@ -2,12 +2,47 @@ import AnimatedText from "@/components/AnimatedText";
 import { HireMe } from "@/components/HireMe";
 import Layout from "@/components/Layout";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
-import profilePic from "../../public/images/profile/mainimg.png";
+import { IconCloud } from "@/components/ui/icon-cloud"
+
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "postgresql",
+  "firebase",
+  "vercel",
+  "docker",
+  "git",
+  "github",
+  "visualstudio",
+  "android",
+  "figma",
+  "python",
+  "mongodb",
+  "mysql",
+  "tailwindcss",
+  "bootstrap",
+  "vite",
+  "postman",
+  "dotnet",
+  "php",
+  "amazonwebservices",
+  "c",
+  "snowflake",
+]
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -25,15 +60,7 @@ export default function Home() {
         <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
-              <Image
-                src={profilePic}
-                alt="Kavindu Aluthwaththa"
-                className="w-full h-auto lg:hidden md:inline-block md:w-full rounded-2xl"
-                priority
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              50vw"
-              />
+                  <IconCloud iconSlugs={slugs} />
             </div>
 
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
