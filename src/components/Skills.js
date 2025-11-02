@@ -89,7 +89,7 @@ const Skills = () => {
                       ) : (
                         <>
                           <Image
-                            src={skill.icon.light}
+                            src={skill.icon.dark}
                             alt={skill.name}
                             fill
                             className="object-contain block"

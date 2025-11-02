@@ -13,17 +13,11 @@ const CustomLink = ({ href, title, className = "" }) => {
   return (
     <Link
       href={href}
-      className={`${className}  rounded relative group`}
+      className={`${className} rounded relative group text-light`}
     >
       {title}
       <span
-        className={`
-              inline-block h-[1px]  bg-dark absolute left-0 -bottom-0.5 
-              group-hover:w-full transition-[width] ease duration-300
-              ${
-                router.asPath === href ? "w-full" : " w-0"
-              } lg:bg-light
-              `}
+        className={`inline-block h-[1px] bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${router.asPath === href ? "w-full" : " w-0"}`}
       >
         &nbsp;
       </span>
@@ -41,18 +35,12 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
   return (
     <button
-      className={`${className}  rounded relative group`}
+      className={`${className} rounded relative group text-light`}
       onClick={handleClick}
     >
       {title}
       <span
-        className={`
-              inline-block h-[1px]  bg-dark absolute left-0 -bottom-0.5 
-              group-hover:w-full transition-[width] ease duration-300
-              ${
-                router.asPath === href ? "w-full" : " w-0"
-              } lg:bg-light
-              `}
+        className={`inline-block h-[1px] bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${router.asPath === href ? "w-full" : " w-0"}`}
       >
         &nbsp;
       </span>
@@ -69,9 +57,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium text-light
-    lg:px-16 relative z-20 md:px-12 sm:px-8
-    "
+      className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium text-light lg:px-16 relative z-20 md:px-12 sm:px-8"
     >
       <button
         type="button"
