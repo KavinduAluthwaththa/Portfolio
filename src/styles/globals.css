@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent white flash on load */
+html,
+body {
+  background-color: #1b1b1b;
+}
+
 /* Projects and Articles image background black*/
 
 
