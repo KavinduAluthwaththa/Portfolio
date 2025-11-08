@@ -40,7 +40,7 @@ const MovingImg = ({ title, img, link }) => {
         onMouseMove={handleMouse}
         onMouseLeave={handleMouseLeave}
       >
-        <h2 className="capitalize text-xl font-semibold hover:underline dark:text-light md:text-lg xs:text-base sm:self-start">
+        <h2 className="capitalize text-xl font-semibold hover:underline text-light md:text-lg xs:text-base sm:self-start">
           {title}
         </h2>
         <FramerImage
@@ -70,13 +70,13 @@ const Article = ({ title, date, link }) => {
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
       className="relative w-full p-4 py-6 my-2 rounded-xl flex sm:flex-col justify-between 
-      bg-light text-dark first:mt-0 border border-solid border-dark
-      border-r-4 border-b-4 dark:bg-dark dark:border-light
+      bg-dark text-light first:mt-0 border border-solid border-light
+      border-r-4 border-b-4
       "
     >
       <MovingImg title={title} link={link} />
       <span
-        className="text-primary font-semibold dark:text-primaryDark min-w-max pl-4 sm:self-start 
+        className="text-primaryDark font-semibold min-w-max pl-4 sm:self-start 
       sm:pl-0 xs:text-sm"
       >
         {date}
@@ -97,13 +97,12 @@ const FeaturedProject = ({
   return (
     <article
       className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border
-border-solid border-dark bg-light p-12 shadow-2xl  dark:border-light dark:bg-dark  lg:flex-col 
+border-solid border-light bg-dark p-12 shadow-2xl lg:flex-col 
 lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4 
     "
     >
       <div
-        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark
-         dark:bg-light  xs:-right-2 xs:h-[102%] xs:w-[100%]
+        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-light xs:-right-2 xs:h-[102%] xs:w-[100%]
         xs:rounded-[1.5rem] "
       />
 
@@ -124,10 +123,10 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
         />
       </Link>
       <div className="flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
-        <span className="text-xl font-medium text-primary dark:text-light xs:text-base">
+        <span className="text-xl font-medium text-light xs:text-base">
           {type}
         </span>
-        <span className="text-xl font-medium text-primaryDark dark:text-primaryDark xs:text-base">
+        <span className="text-xl font-medium text-primaryDark xs:text-base">
           {tools}
         </span>
         <Link href={link} className="underline-offset-2 hover:underline">
@@ -135,7 +134,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
             {title}
           </h2>
         </Link>
-        <p className=" my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
+        <p className=" my-2 rounded-md font-medium text-light sm:text-sm">
           {summary}
         </p>
         <div className="mt-2 flex items-center">
@@ -150,10 +149,9 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
           <Link
             href={link}
             className="ml-4 rounded-lg
-             bg-dark p-2 px-6 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
+             bg-light p-2 px-6 text-lg font-semibold
+             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-light
+            capitalize text-dark hover:border-light hover:bg-dark hover:text-light
             md:p-2 md:px-4 md:text-base"
             aria-label="Project link"
           >
@@ -169,13 +167,12 @@ const Project = ({ title, type, img, link, tools }) => {
   return (
     <article
       className="relative flex w-full flex-col items-center justify-center rounded-2xl  rounded-br-2xl 
-      border  border-solid  border-dark bg-light p-6  shadow-2xl dark:border-light dark:bg-dark 
+      border  border-solid  border-light bg-dark p-6  shadow-2xl 
       xs:p-4
       "
     >
       <div
-        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] rounded-br-3xl bg-dark
-         dark:bg-light  md:-right-2 md:w-[101%] xs:h-[102%]
+        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] rounded-br-3xl bg-light md:-right-2 md:w-[101%] xs:h-[102%]
         xs:rounded-[1.5rem]"
       />
 
@@ -195,10 +192,10 @@ const Project = ({ title, type, img, link, tools }) => {
         />
       </Link>
       <div className="mt-4 flex w-full flex-col items-start justify-between">
-        <span className="text-xl font-medium text-primary dark:text-light lg:text-lg md:text-base">
+        <span className="text-xl font-medium text-light lg:text-lg md:text-base">
           {type}
         </span>
-        <span className="text-xl font-medium text-primaryDark dark:text-primaryDark xs:text-base">
+        <span className="text-xl font-medium text-primaryDark xs:text-base">
           {tools}
         </span>
 
@@ -211,10 +208,9 @@ const Project = ({ title, type, img, link, tools }) => {
           <Link
             href={link}
             className="rounded-lg
-             bg-dark mt-2 px-6 py-2 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
+             bg-light mt-2 px-6 py-2 text-lg font-semibold
+             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-light
+            capitalize text-dark hover:border-light hover:bg-dark hover:text-light
             md:p-2 md:px-4 md:text-base
             "
             aria-label={title}
@@ -240,7 +236,7 @@ export default function Projects() {
 
       <TransitionEffect />
       <main
-        className={`mb-16  flex w-full flex-col items-center justify-center dark:text-light`}
+        className={`mb-16  flex w-full flex-col items-center justify-center text-light`}
       >
         <Layout className="pt-16">
           <AnimatedText
@@ -319,9 +315,8 @@ export default function Projects() {
               <Link
                 href="/about/"
                 target={"_self"}
-                className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
+                className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
+            capitalize text-dark hover:border-light hover:bg-dark hover:text-light
             md:p-2 md:px-4 md:text-base
              `}
               >

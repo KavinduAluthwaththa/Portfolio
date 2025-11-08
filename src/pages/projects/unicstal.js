@@ -54,7 +54,7 @@ export default function About() {
 
       <TransitionEffect />
       <main
-        className={`flex  w-full flex-col items-center justify-center dark:text-light`}
+        className={`flex  w-full flex-col items-center justify-center text-light`}
       >
         <Layout className="pt-16">
           <AnimatedText
@@ -67,13 +67,13 @@ export default function About() {
               className="col-span-4 flex flex-col items-start justify-start xl:col-span-4 md:order-2 
             md:col-span-8"
             >
-              <h2 className="mb-4 text-2xl font-bold capitalize text-dark/75 dark:text-light/75">
+              <h2 className="mb-4 text-2xl font-bold capitalize text-light/75">
                 Unicstal - Crystal Ecommerce Website
               </h2>
-              <h3 className="mb-4 text-lg font-bold  text-lightGreen dark:text-primaryDark">
+              <h3 className="mb-4 text-lg font-bold  text-primaryDark">
                 React | TypeScript | Next.js | Supabase | Tailwind CSS | Framer Motion
               </h3>
-              <div classNname="w-full border-2 border-solid border-light bg-light"></div>
+              <div classNname="w-full border-2 border-solid border-light bg-dark"></div>
               <p className="">
                 UNICSTAL is a sleek, Next.js-powered e-commerce platform that redefines how users experience and purchase crystals online. 
                 Crafted for both spiritual enthusiasts and collectors, it offers an elegant, immersive interface featuring 
@@ -81,7 +81,7 @@ export default function About() {
                 captivating animations, and a 3D background, 
                 UNICSTAL delivers a harmonious blend of design and functionality that enhances user engagement and trust.
               </p>
-              <h4 className="mt-4 text-lg font-800 capitalize text-dark/75 dark:text-light/75">
+              <h4 className="mt-4 text-lg font-800 capitalize text-light/75">
                 Where technology meets tranquility discover the power within every crystal
               </h4>
               <p className="my-4">
@@ -93,12 +93,7 @@ export default function About() {
 
               <div className="mt-2 flex items-center grid-cols-8 gap-4 sm:gap-8">
                 <Link
-                  className="rounded-lg
-             bg-dark p-2 px-6 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
-            md:p-2 md:px-4 md:text-base"
+                  className="rounded-lg bg-light p-2 px-6 text-lg font-semibold sm:px-4 sm:text-base border-2 border-solid border-light capitalize text-dark hover:border-light hover:bg-dark hover:text-light md:p-2 md:px-4 md:text-base"
                   aria-label="Visit Theme Demo"
                   href="https://github.com/KavinduAluthwaththa/Unicstal"
                   target={"_blank"}
@@ -108,16 +103,13 @@ export default function About() {
               </div>
             </div>
             <div
-              className="relative col-span-4 h-max rounded-2xl border-2 border-solid border-dark 
-            bg-light p-8 dark:border-light dark:bg-dark
+              className="relative col-span-4 h-max rounded-2xl border-2 border-solid border-light bg-dark p-8
             xl:col-span-4 md:col-span-8 md:order-1
             "
             >
-              <div
-                className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl 
-                bg-dark
-        dark:bg-light  "
-              />
+                <div
+                  className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl bg-light"
+                />
               <Image
                 className="h-auto w-full rounded-2xl"
                 src={proj1}

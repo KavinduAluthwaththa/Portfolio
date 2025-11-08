@@ -12,13 +12,13 @@ const Thanks = () => {
         <title>Thank You!</title>
       </Head>
       <TransitionEffect />
-      <main className="h-[100vh] w-full dark:bg-dark ">
+      <main className="h-[100vh] w-full bg-dark ">
         <Layout className="relative !bg-transparent !pt-16 flex flex-col items-center justify-center">
           <AnimatedText text="Thank You!" className=" " />
           <AnimatedText text="Your message has been sent." className=" !text-5xl " />
           <Link
             href="/"
-            className="self-center !mt-4 inline-block rounded-lg border-2 border-solid bg-dark px-4 py-2 font-semibold text-light hover:border-dark hover:bg-light hover:text-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light"
+            className="self-center !mt-4 inline-block rounded-lg border-2 border-solid bg-light px-4 py-2 font-semibold text-dark hover:border-light hover:bg-dark hover:text-light"
           >
             Go To Home
           </Link>

@@ -8,7 +8,7 @@ const LiIcon = ({ reference, time }) => {
   });
 
   return (
-    <figure className="stroke-dark absolute left-0 dark:stroke-light">
+  <figure className="stroke-light absolute left-0">
       <svg
         className="-rotate-90 md:w-[60px] md:h-[60px] xs:w-[40px] xs:h-[40px]"
         width="75"
@@ -20,14 +20,14 @@ const LiIcon = ({ reference, time }) => {
           cy="50"
           r="20"
           pathLength="1"
-          className="stroke-primary  stroke-1 fill-none dark:stroke-primaryDark"
+          className="stroke-primaryDark stroke-1 fill-none"
         />
         <motion.circle
           cx="75"
           cy="50"
           r="20"
           pathLength="1"
-          className="fill-light stroke-[5px] dark:fill-dark"
+          className="fill-primaryDark stroke-[5px]"
           style={{ pathLength: scrollYProgress }}
         />
         <circle
@@ -35,7 +35,7 @@ const LiIcon = ({ reference, time }) => {
           cy="50"
           r="10"
           pathLength="1"
-          className="animate-pulse stroke-1 fill-primaryDark dark:fill-primaryDark"
+          className="animate-pulse stroke-1 fill-primaryDark"
         />
       </svg>
     </figure>

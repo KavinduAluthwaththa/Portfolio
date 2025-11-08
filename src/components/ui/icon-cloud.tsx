@@ -54,33 +54,11 @@ const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
 };
 
 export const DynamicCloud = (props: DynamicCloudProps) => {
-  const [theme, setTheme] = React.useState("light");
   const [data, setData] = React.useState<IconData | null>(null);
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMounted(true);
-    
-    // Detect theme from document
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
-
-    // Watch for theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === "class") {
-          const isDark = document.documentElement.classList.contains("dark");
-          setTheme(isDark ? "dark" : "light");
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
   }, []);
 
   React.useEffect(() => {
@@ -94,10 +72,11 @@ export const DynamicCloud = (props: DynamicCloudProps) => {
       return null;
     }
 
+    // Always use dark theme
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme)
+      renderCustomIcon(icon, "dark")
     );
-  }, [data, theme]);
+  }, [data]);
 
   if (!mounted) {
     return null;

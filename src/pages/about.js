@@ -47,7 +47,7 @@ export default function About() {
 
       <TransitionEffect />
       <main
-        className={`flex  w-full flex-col items-center justify-center dark:text-light`}
+        className={`flex  w-full flex-col items-center justify-center text-light`}
       >
         <Layout className="pt-16">
           <AnimatedText
@@ -60,7 +60,7 @@ export default function About() {
               className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 
             md:col-span-8"
             >
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
+              <h2 className="mb-4 text-lg font-bold uppercase text-light/75">
                 BIOGRAPHY
               </h2>
               <p className="font-medium ">
@@ -72,18 +72,17 @@ export default function About() {
               </p>
             </div>
             <div
-              className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-dark 
-            bg-light p-8 dark:border-light dark:bg-dark
+              className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-light 
+            bg-dark p-8
             xl:col-span-4 md:col-span-8 md:order-1
             "
             >
               <div
                 className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl 
-                bg-dark
-        dark:bg-light  "
+                bg-light"
               />
               <Image
-                className="h-auto w-full rounded-2xl border-2 border-solid border-dark"
+                className="h-auto w-full rounded-2xl border-2 border-solid border-light"
                 priority={true}
                 src={profile}
                 alt="Kavindu Aluthwaththa"
@@ -101,7 +100,7 @@ export default function About() {
                   <AnimatedNumberFramerMotion value={1461} />+
                 </span>
                 <h3
-                  className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
+                  className="mb-4 text-xl font-medium capitalize text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
                   Days of Coding
@@ -113,7 +112,7 @@ export default function About() {
                   <AnimatedNumberFramerMotion value={500} />
                 </span>
                 <h3
-                  className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
+                  className="mb-4 text-xl font-medium capitalize text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
                   Bugs Made
@@ -125,7 +124,7 @@ export default function About() {
                   <AnimatedNumberFramerMotion value={499} />
                 </span>
                 <h3
-                  className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
+                  className="mb-4 text-xl font-medium capitalize text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
                   Bugs Crushed

@@ -19,14 +19,14 @@ const Details = ({ position, company, companyLink, time, work }) => {
         <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
           {position}{" "}
           <a
-            className="capitalize text-slideGreen dark:text-primaryDark"
+            className="capitalize text-primaryDark"
             href={companyLink}
             target={"_blank"}
           >
             <br></br>{company}
           </a>
         </h3>
-        <span className="capitalize text-dark/75 font-medium dark:text-light/50 xs:text-sm">
+        <span className="capitalize text-light/50 font-medium xs:text-sm">
           {time}
         </span>
         <p className="font-medium w-full md:text-sm"> {work}</p>
@@ -52,7 +52,7 @@ const Education = () => {
       <div ref={ref} className="relative w-[75%] mx-auto lg:w-[90%] md:w-full">
         <motion.div
           className="absolute left-9 top-0 w-[4px] md:w-[2px] md:left-[30px] xs:left-[20px] h-full bg-primaryDark shadow-3xl 
-            origin-top  dark:bg-primaryDark dark:shadow-3xl"
+            origin-top"
           style={{ scaleY: scrollYProgress }}
         />
 
@@ -76,9 +76,8 @@ const Education = () => {
         <Link
                 href="/projects/"
                 target={"_self"}
-                className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
+                className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
+            capitalize text-dark hover:border-light hover:bg-dark hover:text-light
             md:p-2 md:px-4 md:text-base
              `}
         >

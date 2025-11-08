@@ -54,7 +54,7 @@ export default function Home() {
 
       <TransitionEffect />
       <article
-        className={`flex min-h-screen items-center text-dark dark:text-light sm:items-start`}
+        className={`flex min-h-screen items-center text-light sm:items-start`}
       >
         <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
@@ -80,9 +80,8 @@ export default function Home() {
                 <Link
                   href="/about/"
                   target={"_self"}
-                  className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
+                  className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
+            capitalize text-dark hover:border-light hover:bg-dark hover:text-light
             md:p-2 md:px-4 md:text-base
              `}
                 >
@@ -92,9 +91,8 @@ export default function Home() {
                   href="/cv.pdf"
                   target={"_blank"}
                   download
-                  className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
-            capitalize text-dark hover:border-light hover:bg-dark hover:text-light 
-            dark:bg-dark dark:text-light dark:hover:bg-light dark:hover:text-dark
+                  className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
+            capitalize text-light hover:border-dark hover:bg-light hover:text-dark
             md:p-2 md:px-4 md:text-base
              `}
                 >
