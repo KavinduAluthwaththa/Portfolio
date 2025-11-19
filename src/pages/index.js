@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
 import { IconCloud } from "@/components/ui/icon-cloud"
+import { fetchSimpleIcons } from "react-icon-cloud";
 
 const slugs = [
   "typescript",
@@ -38,10 +39,17 @@ const slugs = [
   "amazonwebservices",
   "c",
   "snowflake",
-]
+];
 
-export default function Home() {
-
+export async function getStaticProps() {
+  const iconData = await fetchSimpleIcons({ slugs });
+  return {
+    props: {
+      iconData,
+    },
+  };
+}
+export default function Home({ iconData }) {
   return (
     <>
       <Head>
@@ -59,7 +67,7 @@ export default function Home() {
         <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
-                  <IconCloud iconSlugs={slugs} />
+                  <IconCloud iconData={iconData} />
             </div>
 
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">

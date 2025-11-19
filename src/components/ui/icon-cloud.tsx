@@ -2,7 +2,8 @@ import React from "react";
 import { Cloud, fetchSimpleIcons, ICloud, renderSimpleIcon, SimpleIcon } from "react-icon-cloud";
 
 export type DynamicCloudProps = {
-  iconSlugs: string[];
+  iconSlugs?: string[];
+  iconData?: IconData;
 };
 
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
@@ -54,34 +55,13 @@ const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
 };
 
 export const DynamicCloud = (props: DynamicCloudProps) => {
-  const [data, setData] = React.useState<IconData | null>(null);
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  React.useEffect(() => {
-    if (mounted) {
-      fetchSimpleIcons({ slugs: props.iconSlugs }).then(setData).catch(console.error);
-    }
-  }, [props.iconSlugs, mounted]);
-
-  const renderedIcons = React.useMemo(() => {
-    if (!data) {
-      return null;
-    }
-
-    // Always use dark theme
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, "dark")
-    );
-  }, [data]);
-
-  if (!mounted) {
-    return null;
+  let icons: SimpleIcon[] = [];
+  if (props.iconData) {
+    icons = Object.values(props.iconData.simpleIcons);
   }
-
+  // fallback for client-side usage if needed
+  // else icons will be empty and nothing will render
+  const renderedIcons = icons.map((icon) => renderCustomIcon(icon, "dark"));
   return <Cloud {...cloudProps}>{renderedIcons}</Cloud>;
 };
 
