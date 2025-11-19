@@ -278,7 +278,7 @@ export default function Projects() {
               />
             </div>
 
-            {/* <div className="col-span-6 sm:col-span-12">
+            <div className="col-span-6 sm:col-span-12">
               <Project
                 type="Design & Development"
                 tools="React | TypeScript | Next.js | Supabase"
@@ -288,7 +288,7 @@ export default function Projects() {
                 link="projects/unicstal"
                 github="https://github.com/KavinduAluthwaththa/Unicstal"
               />
-            </div> */}
+            </div>
 
             <div className="col-span-6 sm:col-span-12">
               <Project
