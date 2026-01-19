@@ -2,8 +2,14 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Link from "next/link";
-import { IconCloud } from "@/components/ui/icon-cloud"
+import dynamic from "next/dynamic";
 import { fetchSimpleIcons } from "react-icon-cloud";
+
+// Lazy load IconCloud to reduce initial bundle size
+const IconCloud = dynamic(() => import("@/components/ui/icon-cloud").then(mod => mod.IconCloud), {
+  ssr: false,
+  loading: () => <div className="w-full h-96 flex items-center justify-center"><div className="animate-pulse text-light">Loading...</div></div>
+});
 
 const slugs = [
   "typescript",

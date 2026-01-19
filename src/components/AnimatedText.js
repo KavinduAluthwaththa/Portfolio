@@ -39,7 +39,8 @@ const AnimatedText = ({ text, className = "" }) => {
       text-8xl font-bold w-full capitalize  ${className} xl:text-6xl`}
         variants={quote}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         {text.split(" ").map((char, index) => {
           return (
