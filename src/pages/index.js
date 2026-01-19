@@ -2,7 +2,6 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Link from "next/link";
-import TransitionEffect from "@/components/TransitionEffect";
 import { IconCloud } from "@/components/ui/icon-cloud"
 import { fetchSimpleIcons } from "react-icon-cloud";
 
@@ -60,7 +59,6 @@ export default function Home({ iconData }) {
         />
       </Head>
 
-      <TransitionEffect />
       <article
         className={`flex min-h-screen items-center text-light sm:items-start`}
       >

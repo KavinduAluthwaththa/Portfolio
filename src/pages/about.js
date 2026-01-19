@@ -7,7 +7,6 @@ import { useEffect, useRef } from "react";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import AnimatedText from "@/components/AnimatedText";
-import TransitionEffect from "@/components/TransitionEffect";
 import Education from "@/components/Education";
 
 function AnimatedNumberFramerMotion({ value }) {
@@ -45,7 +44,6 @@ export default function About() {
         />
       </Head>
 
-      <TransitionEffect />
       <main
         className={`flex  w-full flex-col items-center justify-center text-light`}
       >

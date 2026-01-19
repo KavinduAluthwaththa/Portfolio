@@ -1,6 +1,5 @@
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
-import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
@@ -11,7 +10,6 @@ const NotFound = () => {
       <Head>
         <title>404 Page </title>
       </Head>
-      <TransitionEffect />
       <main className="h-[100vh] w-full bg-dark ">
         <Layout className="relative !bg-transparent !pt-16 flex flex-col items-center justify-center">
           <AnimatedText text="404" className="text-white " />

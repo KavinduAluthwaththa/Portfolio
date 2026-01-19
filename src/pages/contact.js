@@ -50,7 +50,6 @@ export default function About() {
         />
       </Head>
 
-      <TransitionEffect />
       <main
         className={`flex w-full flex-col items-center justify-center text-light`}
       >

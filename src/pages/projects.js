@@ -234,7 +234,6 @@ export default function Projects() {
         />
       </Head>
 
-      <TransitionEffect />
       <main
         className={`mb-16  flex w-full flex-col items-center justify-center text-light`}
       >

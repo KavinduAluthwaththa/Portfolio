@@ -7,7 +7,7 @@ import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import ShaderBackground from "@/components/ui/shader-background";
+import LiquidEther from "@/components/ui/LiquidEther";
 
 // If loading a variable font, you don't need to specify the font weight
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
@@ -43,7 +43,25 @@ export default function App({ Component, pageProps }) {
         <main
           className={`${montserrat.variable} font-mont w-full min-h-screen h-full relative`}
         >
-          <ShaderBackground />
+          <div className="fixed top-0 left-0 w-full h-full z-0">
+            <LiquidEther
+              colors={['#e3f2fd', '#42a7fa', '#6589c0']}
+              mouseForce={20}
+              cursorSize={100}
+              isViscous
+              viscous={30}
+              iterationsViscous={32}
+              iterationsPoisson={32}
+              resolution={0.5}
+              isBounce={false}
+              autoDemo
+              autoSpeed={0.5}
+              autoIntensity={2.2}
+              takeoverDuration={0.25}
+              autoResumeDelay={3000}
+              autoRampDuration={0.6}
+          />
+          </div>
           <div className="relative z-10">
             <Navbar />
             <AnimatePresence initial={false} mode="wait">
