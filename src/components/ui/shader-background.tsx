@@ -107,24 +107,29 @@ const ShaderBackground = () => {
     }
   `;
 
-  // Helper function to compile shader
-  const loadShader = (gl, type, source) => {
-    const shader = gl.createShader(type);
-    gl.shaderSource(shader, source);
-    gl.compileShader(shader);
-
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error('Shader compile error: ', gl.getShaderInfoLog(shader));
-      gl.deleteShader(shader);
-      return null;
-    }
-
-    return shader;
-  };
-
-  // Remove initShaderProgram from here, move inside useEffect
-
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Helper function to compile shader
+    const loadShader = (gl, type, source) => {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error('Shader compile error: ', gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+      }
+
+      return shader;
+    };
+
+    // Initialize shader program
     const initShaderProgram = (gl, vsSource, fsSource) => {
       const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
       const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
@@ -141,9 +146,6 @@ const ShaderBackground = () => {
 
       return shaderProgram;
     };
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
 
     const gl = canvas.getContext('webgl');
     if (!gl) {
@@ -214,7 +216,7 @@ const ShaderBackground = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [fsSource, vsSource, initShaderProgram]);
+  }, []); // Remove dependencies that are defined inside useEffect
 
   return (
     <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" />

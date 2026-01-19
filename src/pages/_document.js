@@ -8,9 +8,10 @@ export default function Document() {
       <body className="bg-dark" style={{ backgroundColor: '#1b1b1b' }}>
         <Script id="force-dark-mode" strategy="beforeInteractive">
           {`
-            // Force dark mode permanently - remove 'dark' class manipulation
-            document.documentElement.classList.add('dark');
-            document.body.style.backgroundColor = '#1b1b1b';
+            // Force dark mode permanently
+            if (typeof document !== 'undefined') {
+              document.documentElement.classList.add('dark');
+            }
           `}
         </Script>
         <Main />
