@@ -7,7 +7,7 @@ import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import DarkVeil from "@/components/ui/DarkVeil";
+import Plasma from "@/components/ui/Plasma";
 
 // If loading a variable font, you don't need to specify the font weight
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
@@ -44,14 +44,14 @@ export default function App({ Component, pageProps }) {
           className={`${montserrat.variable} font-mont w-full min-h-screen h-full relative`}
         >
           <div className="fixed top-0 left-0 w-full h-full z-0">
-            <DarkVeil
-            hueShift={0}
-            noiseIntensity={0}
-            scanlineIntensity={0}
-            speed={0.5}
-            scanlineFrequency={0}
-            warpAmount={0}
-          />
+              <Plasma 
+                color="#b7beff"
+                speed={0.6}
+                direction="forward"
+                scale={1.1}
+                opacity={0.8}
+                mouseInteractive={true}
+              />
           </div>
           <div className="relative z-10">
             <Navbar />
