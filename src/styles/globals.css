@@ -15,7 +15,7 @@ body {
 div#__next { max-width: 1900px; margin-right: auto; margin-left: auto;}
 
 /* Homepage min Height */
-.min-h-screen {min-height: 90vh;}
+.min-h-screen {min-height: 80vh;}
 
 /* Modern Custom Scrollbar */
 ::-webkit-scrollbar {

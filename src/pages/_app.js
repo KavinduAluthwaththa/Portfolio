@@ -52,20 +52,17 @@ export default function App({ Component, pageProps }) {
       {!isInitialLoad && (
         <main
           className={`${montserrat.variable} font-mont w-full min-h-screen h-full relative`}
-          style={isMobile ? { background: 'linear-gradient(to bottom, #0a0e1a, #1a1a2e)' } : {}}
         >
-          {!isMobile && (
-            <div className="fixed top-0 left-0 w-full h-full z-0">
-              <Plasma 
-                color="#b7beff"
-                speed={0.6}
-                direction="forward"
-                scale={1.1}
-                opacity={0.8}
-                mouseInteractive={true}
-              />
-            </div>
-          )}
+          <div className="fixed top-0 left-0 w-full h-full z-0">
+            <Plasma 
+              color="#b7beff"
+              speed={0.6}
+              direction="forward"
+              scale={1.1}
+              opacity={0.8}
+              mouseInteractive={!isMobile}
+            />
+          </div>
           <div className="relative z-10">
             <Navbar />
             <AnimatePresence initial={false} mode="wait">

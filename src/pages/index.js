@@ -68,8 +68,8 @@ export default function Home({ iconData }) {
       <article
         className={`flex min-h-screen items-center text-light sm:items-start`}
       >
-        <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
-          <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
+        <Layout className="!pt-0 md:!pt-0 sm:!pt-0 !pb-0">
+          <div className="flex w-full items-start justify-between md:flex-col pt-0 pb-0">
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
                   <IconCloud iconData={iconData} />
             </div>
