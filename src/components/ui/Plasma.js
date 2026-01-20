@@ -94,14 +94,6 @@ export const Plasma = ({
     if (!containerRef.current) return;
     if (typeof window === 'undefined') return;
 
-    // Detect mobile devices
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-    
-    // Skip rendering on mobile to prevent lag
-    if (isMobile) {
-      return;
-    }
-
     const useCustomColor = color ? 1.0 : 0.0;
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1];
 
