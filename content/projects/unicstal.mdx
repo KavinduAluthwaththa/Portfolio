@@ -1,0 +1,39 @@
+---
+title: UNICSTAL
+summary: A modern marketing & member portal for a university society, built with Next.js, TypeScript and Supabase as the data backbone.
+role: Full-stack Developer
+stack:
+  - Next.js
+  - TypeScript
+  - React
+  - Supabase
+  - Tailwind CSS
+year: 2025
+type: Web
+featured: true
+cover: ../../public/images/projects/unicstal.png
+links:
+  repo: https://github.com/KavinduAluthwaththa/Unicstal
+---
+
+## Problem
+
+The society's existing presence was a static page that nobody owned. Members couldn't log in, events lived on social media only and there was no central place to publish committee updates.
+
+## My role
+
+Lead developer and designer. I shaped the information architecture, picked the stack, designed the brand surface and shipped the deployment pipeline.
+
+## Architecture
+
+**Next.js App Router** for the marketing surface and the authenticated member area, with **Supabase** providing auth, Postgres and storage. Server components hit the database directly for read-heavy pages; mutations go through server actions guarded by Row Level Security.
+
+## Key decisions & trade-offs
+
+- **Supabase over a custom backend.** Removed the need to operate auth and a database for a mostly-read workload - I kept the option to swap in a custom API later.
+- **Row Level Security as the auth boundary.** Every database read enforces the calling user's role, so even a buggy server action can't leak data across roles.
+- **Static-by-default marketing pages.** Marketing routes are statically generated and revalidated; the member area is dynamic.
+
+## Outcome
+
+A single, branded home for the society with auth, content management and an extensible structure that the next batch of committee members can keep evolving.

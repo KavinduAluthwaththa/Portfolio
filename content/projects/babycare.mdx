@@ -1,0 +1,39 @@
+---
+title: Babycare
+summary: "A first serious full-stack project: a community resource and tracking app for new parents, built end-to-end on PHP and MySQL."
+role: Full-stack Developer
+stack:
+  - PHP
+  - MySQL
+  - JavaScript
+  - HTML
+  - CSS
+year: 2023
+type: Web
+featured: false
+cover: ../../public/images/projects/babycare.png
+links:
+  repo: https://github.com/KavinduAluthwaththa/Babycare-Project
+---
+
+## Problem
+
+New parents need quick, trustworthy answers - milestones, feeding schedules, vaccination dates - and they need a place to log their child's progress without juggling four apps.
+
+## My role
+
+Designed and built the project solo as part of my second-year coursework. This was the first non-trivial app I deployed end-to-end.
+
+## Architecture
+
+Plain **PHP** with **MySQL** for persistence. Server-rendered pages, session-based auth, file uploads for milestone photos, and a small dashboard summarising recent entries.
+
+## Key decisions & trade-offs
+
+- **No framework.** Forced me to understand routing, sessions and SQL parameter binding from the ground up.
+- **Hand-rolled validation.** Every input goes through a small validator helper - in hindsight, a framework would have saved time, but the muscle memory still pays off.
+- **Mobile-first CSS.** Most parents would open this on their phone, so layout starts at the smallest breakpoint and grows up.
+
+## Outcome
+
+The project taught me how a database-backed web app actually fits together - the same mental model I still apply when reaching for Laravel, .NET or Next.js today.

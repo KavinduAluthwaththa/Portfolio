@@ -2,6 +2,20 @@
 # Next build dir
 .next/
 
+# Velite generated content collections
+.velite/
+
+# Velite-managed static assets (project covers)
+public/static/
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# Env files
+.env
+.env.local
+.env.*.local
+
 ### PhpStorm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839

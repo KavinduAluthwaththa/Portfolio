@@ -1,0 +1,47 @@
+---
+title: Smart Agriculture Platform
+summary: A capstone-grade smart farming app pairing a .NET backend with a Flutter client, helping smallholder farmers track crops, weather and yields from their phone.
+role: Full-stack Engineer & Tech Lead
+stack:
+  - .NET Core
+  - C#
+  - Flutter
+  - Dart
+  - PostgreSQL
+  - REST
+year: 2025
+type: Full-Stack
+featured: true
+cover: ../../public/images/projects/capstone.png
+links:
+  repo: https://github.com/KavinduAluthwaththa/Capstone-Project-Frontend
+metrics:
+  - label: Phases
+    value: 4 sprints
+  - label: API endpoints
+    value: 30+
+  - label: Mobile screens
+    value: "18"
+---
+
+## Problem
+
+Smallholder farmers in rural Sri Lanka rely on intuition and hearsay for planting and irrigation decisions. There's no shared system to log crop history, track weather windows, or coordinate yield data with cooperatives - and most farmers carry an Android phone but have spotty connectivity.
+
+## My role
+
+I lead the project end-to-end: scoping with my supervisor, designing the data model, building the .NET backend, owning the Flutter mobile client and shipping each phase to the field testers.
+
+## Architecture
+
+A REST API in **ASP.NET Core** sits on top of **PostgreSQL** for transactional data, with a thin caching layer for the lookup-heavy crop and pesticide tables. The Flutter client uses a repository pattern with local SQLite for offline-first writes that sync when the device reconnects.
+
+## Key decisions & trade-offs
+
+- **Offline-first over real-time.** Field connectivity is unreliable, so the mobile client treats the network as a sync target rather than a source of truth.
+- **Server-driven UI.** Crop categories, advice and form schemas are fetched from the API to let agronomists update content without app releases.
+- **PostgreSQL over Firebase.** Stronger relational guarantees for yield data and an easier migration story when the cooperative wants to plug in BI tools.
+
+## Outcome
+
+The app currently runs across four pilot villages, with 100+ logged crop cycles and a roadmap to integrate weather APIs and SMS notifications next term.

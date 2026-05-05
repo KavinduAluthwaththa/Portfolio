@@ -1,0 +1,33 @@
+---
+title: Designing offline-first sync for a rural farming app
+summary: Lessons from shipping a Flutter + .NET app to villages with patchy mobile coverage - and why offline isn't a setting, it's an architecture.
+date: 2025-09-12
+tags:
+  - Flutter
+  - .NET
+  - Architecture
+---
+
+The first time I demoed the Capstone smart-farming app in the field, the screen went grey within ninety seconds. The signal at the test farm hovered between one bar and none, and the app I had built like a SaaS dashboard simply could not cope.
+
+This is the post I wish I had read before that demo.
+
+## Treat the network as a sync target, not a source of truth
+
+The intuition I had to unlearn was that "offline support" is a checkbox you tick at the end. In practice, every screen has to be designed assuming the request will fail or take ten seconds to complete. That changed three things in our codebase:
+
+1. **Writes are persisted locally first.** Every form submission lands in SQLite immediately and is queued for sync. The UI never waits for the API.
+2. **Reads come from a local mirror.** The repository layer always returns from SQLite; a background task reconciles with the server.
+3. **Conflict resolution is explicit.** When two devices edit the same row offline, the server applies a "last writer wins by timestamp" rule and surfaces the loser to the user the next time they open the record.
+
+## Server-driven UI for content that changes weekly
+
+Crop categories, advice text and form schemas live on the server because agronomists - not engineers - own them. The client downloads a versioned bundle of this content on first launch and revalidates in the background.
+
+It means we can update planting advice without a Play Store release. It also means the app's first launch is its slowest by design, which is a trade-off worth being explicit about with users.
+
+## What I'd do differently
+
+If I started over, I'd reach for **Drift** instead of raw SQLite from day one, build the sync engine as a pure-Dart package isolated from Flutter widgets, and write the conflict-resolution rules as plain functions that I can test exhaustively without a device.
+
+Offline-first is mostly about admitting upfront that the network is the unreliable dependency in the system - and designing accordingly.

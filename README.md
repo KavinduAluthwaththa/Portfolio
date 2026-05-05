@@ -1,102 +1,86 @@
-# Personal Portfolio
+# Kavindu Aluthwaththa - Portfolio
 
-This is a personal portfolio and blog theme built around Next.js. It features a modern, clean, and responsive design, perfect for developers or anyone looking to showcase their work and ideas.
+A modern, glass-first portfolio built on Next.js 15 (App Router), TypeScript, MDX and shadcn/ui. Designed for a mixed audience of recruiters, freelance clients, and the dev community, with a Linear/Vercel-inspired aesthetic.
 
-## 📚 Tech Stack
-Next.js 14+
-React 18+
-Tailwind CSS 3+
-Framer Motion 11+
-
-## ✨ Features
-- Dark and light color mode 
-- Reusable Components
-# Portfolio — Kavindu Aluthwaththa
-
-This repository contains a personal portfolio website built with Next.js, Tailwind CSS and Framer Motion. It showcases projects, experience, and contact information.
+> **Live:** [kavindualuthwaththa.com](https://kavindualuthwaththa.com)
 
 ## Tech stack
-- Next.js 14
-- React 18
-- Tailwind CSS 3
-- Framer Motion
 
-## Features
-- Responsive, mobile-first layout
-- Dark / light theme support
-- Reusable, accessible components
-- Project pages and contact form
-- Sitemap generation (via `next-sitemap`)
+- **Framework:** Next.js 15 (App Router, RSC)
+- **Language:** TypeScript 5
+- **Styling:** Tailwind CSS 3 + design tokens, shadcn/ui (`new-york`)
+- **Content:** MDX via [Velite](https://velite.js.org/) with typed (zod) frontmatter
+- **Motion:** [`motion`](https://motion.dev) (Framer Motion successor) - reduced-motion aware
+- **Forms:** zod + Sonner toasts, Formspree as the email transport
+- **Search:** [`cmdk`](https://cmdk.paco.me/) command palette (Ctrl/Cmd-K)
+- **Fonts:** [Geist Sans](https://vercel.com/font) + Geist Mono
+- **Analytics:** Vercel Analytics + Speed Insights
+- **SEO:** Native Next sitemap/robots, dynamic OG image generation, Person JSON-LD
 
-## Requirements
-- Node.js 18+ (or a compatible Node 18.x runtime)
-- npm (or Yarn) — either package manager works
+## Project structure
 
-## Install & run (development)
-Clone the repository and install dependencies:
+```
+src/
+  app/                      Next.js App Router pages and API routes
+    api/og/                 Dynamic OG image generation
+    api/contact/            Server route for the contact form
+    projects/[slug]/        MDX-rendered case studies
+    writing/[slug]/         MDX-rendered essays
+  components/
+    chrome/                 FloatingNav, Footer, CommandPalette, PageTransition
+    primitives/             GlassCard, AuroraBackground, TechChip, Mdx, etc
+    sections/               Composed page sections (BentoHero, Timeline, etc)
+    ui/                     shadcn primitives (button, dialog, command, ...)
+  content/data/             Typed site config, skills, experience, education
+  lib/                      schemas, utils
+  styles/                   global stylesheet (tokens, aurora, scrollbar)
+content/                    MDX source
+  projects/                 One file per case study
+  writing/                  One file per essay
+public/                     Static assets (favicons, manifest, project covers)
+.velite/                    Auto-generated typed content collections
+```
 
-```powershell
-git clone https://github.com/KavinduAluthwaththa/Portfolio.git
-cd Portfolio
+## Local development
+
+```bash
 npm install
-# or: yarn
+npm run dev          # http://localhost:3000
 ```
 
-Start the dev server:
+## Production build
 
-```powershell
-npm run dev
-# or: yarn dev
+```bash
+npm run build        # Builds Velite collections then Next.js
+npm run start        # Serves the production build locally
+npm run lint         # ESLint
 ```
 
-Open http://localhost:3000 in your browser.
+## Adding a new case study
 
-## Build & production
-To create a production build and preview the production server:
+1. Create `content/projects/<slug>.mdx`
+2. Use the schema in [`velite.config.ts`](velite.config.ts) for frontmatter (title, summary, role, stack, year, type, featured, links, metrics).
+3. Drop a cover image somewhere under `public/` and reference it from frontmatter as a relative path.
+4. Body markdown is your case study - I keep them structured as Problem / My role / Architecture / Key decisions / Outcome.
 
-```powershell
-npm run build
-npm run start
-# or: yarn build && yarn start
+Velite type-checks the frontmatter at build time and regenerates `.velite/index.d.ts`, so the new project shows up in `projects` immediately.
+
+## Adding a new essay
+
+Same flow under `content/writing/<slug>.mdx`. Required frontmatter is `title`, `summary`, `date`, optional `tags` and `published`.
+
+## Environment variables
+
+Optional - the contact form falls back to a hard-coded Formspree endpoint if you don't set this.
+
+```
+NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/<your-form-id>
 ```
 
-This project also runs `next-sitemap` after build (see `postbuild` script) to generate a sitemap.
+## Deploying
 
-## Available scripts
-Taken from `package.json`:
+This site is built for Vercel (Next.js App Router + Edge OG images). Any host that supports Next.js 15 will work.
 
-- `npm run dev` — run Next.js in development mode
-- `npm run build` — build for production
-- `npm run postbuild` — run sitemap generation (runs automatically after `build`)
-- `npm run start` — start the production server
-- `npm run lint` — run Next.js/ESLint checks
+## License
 
-## Project structure (high level)
-
-- `src/components/` — UI and layout components (Navbar, Footer, AnimatedText, etc.)
-- `src/pages/` — Next.js pages (index, about, projects, contact, ...)
-- `public/` — static assets (images, manifest)
-- `styles/` — global and module CSS
-
-## Contributing
-Feel free to open issues or submit PRs for bugfixes and enhancements. When contributing, please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Open a pull request with a clear description of changes
-
-## Notes / Next steps
-- Add a license file if you want to make licensing explicit (e.g. MIT).
-- Add a brief AUTHORS or CONTACT section with your preferred contact method.
-
-## Contact
-If you want to reach me, add your preferred contact details here (email, LinkedIn or GitHub profile).
-
----
-
-If you'd like, I can also:
-- add a small Contributors section or License file,
-- generate an example Deployment/VERCEL section, or
-- include screenshots and a demo link.
-
-Please tell me how you'd like the contact/license info to appear and I will update the README accordingly.
+Personal portfolio - all rights reserved on the content. Code patterns are free to learn from.

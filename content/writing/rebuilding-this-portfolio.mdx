@@ -1,0 +1,38 @@
+---
+title: Rebuilding my portfolio for 2026
+summary: Why I scrapped a forked template and rewrote my site on Next.js 15, MDX and a glass-first design system - and what I learned about portfolios that actually convert.
+date: 2026-05-01
+tags:
+  - Next.js
+  - Design
+  - Meta
+---
+
+For about a year my portfolio was a forked template with a full-screen WebGL plasma shader, hard-coded project pages and a stat that proudly claimed "Bugs made: 500, bugs crushed: 499". It looked fine. It told no one anything useful about me.
+
+So I rebuilt it. Here's what I changed and why.
+
+## Content over chrome
+
+The honest read on most developer portfolios - mine included - is that the visuals are the easy part and the content is the hard part. I spent a weekend writing real case studies for each project: the problem, my role, what I decided and why, and the outcome. Five well-written paragraphs beat any animation.
+
+## A design system, not pages
+
+Every visual is now built from a small set of primitives - `GlassCard`, `TechChip`, `EyebrowLabel`, `Section`, `Container`. New pages are a recombination of existing parts, which means I can ship a new project case study in fifteen minutes without touching styling.
+
+## Performance as a feature
+
+The old site loaded a 5.7&nbsp;MB cover image, a continuous WebGL shader, GSAP, Three.js and a 3D icon cloud just to say hello. The new one runs entirely on CSS gradients, ships a single animation library, and respects `prefers-reduced-motion` everywhere. Lighthouse rewards the change; so does my battery.
+
+## Content lives in MDX
+
+Projects and writing live as MDX files in `content/`, validated at build time by a typed schema. Adding a new project is a new file. No CMS, no database, no deployment surprises.
+
+## What I removed
+
+- A 2-second loading screen on every navigation.
+- Three competing animation libraries.
+- A "Bugs made / bugs crushed" counter.
+- Five hard-coded project pages, replaced by one dynamic route.
+
+The site you're reading this on is the result. There's still plenty I want to add - more writing, a uses page that actually keeps up with my setup, view counters on case studies - but I finally have a foundation that I'm happy to build on instead of fight with.

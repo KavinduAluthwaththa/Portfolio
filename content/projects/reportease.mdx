@@ -1,0 +1,44 @@
+---
+title: ReportEase
+summary: A Laravel-based maintenance management system that lets students, faculty and staff report and track campus issues with role-based dashboards.
+role: Full-stack Developer
+stack:
+  - Laravel
+  - PHP
+  - Blade
+  - MySQL
+  - Tailwind CSS
+year: 2025
+type: Web
+featured: true
+cover: ../../public/images/projects/reportease.png
+links:
+  repo: https://github.com/KavinduAluthwaththa/ReportEase
+metrics:
+  - label: User roles
+    value: "4"
+  - label: Tracked workflows
+    value: "12"
+---
+
+## Problem
+
+Reporting a broken projector at university used to mean tracking down the right office, filling a paper form and hoping someone followed up. Issues got lost between departments and there was no way to see resolution times.
+
+## My role
+
+Sole developer. I designed the data model, the role-based access flows and the Blade UI, and shipped a deployable Laravel app to a campus staging environment.
+
+## Architecture
+
+A monolithic **Laravel** app with **MySQL**, served-rendered Blade views and a small Alpine.js layer for interactive dashboards. Image uploads pass through Laravel's storage abstraction so the underlying disk can be swapped for S3 later without code changes.
+
+## Key decisions & trade-offs
+
+- **Server-rendered Blade over an SPA.** The user base prefers a fast, low-JS experience that works on lab desktops; a SPA would have added complexity for no user benefit.
+- **Role-based middleware pipelines.** Each user role (student, faculty, maintenance, admin) sees a tailored dashboard from the same routes, gated by Laravel middleware - keeps the codebase small.
+- **Structured statuses, not free text.** Issues move through a fixed state machine so admins can produce real reports.
+
+## Outcome
+
+ReportEase replaces a paper-and-email workflow with a single source of truth for campus maintenance, with image evidence, structured statuses and a clear audit trail per issue.

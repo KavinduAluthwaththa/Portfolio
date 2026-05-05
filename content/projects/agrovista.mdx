@@ -1,0 +1,39 @@
+---
+title: Agrovista
+summary: A storefront and inventory tracker for an agricultural retailer, built on the classic LAMP stack with a focus on speed and clarity over fashion.
+role: Full-stack Developer
+stack:
+  - PHP
+  - MySQL
+  - JavaScript
+  - HTML
+  - CSS
+year: 2025
+type: Web
+featured: false
+cover: ../../public/images/projects/agrovista.png
+links:
+  repo: https://github.com/KavinduAluthwaththa/Agrovista
+---
+
+## Problem
+
+A regional agriculture retailer was tracking stock and orders on spreadsheets passed between branches. Numbers drifted; reordering was reactive; the storefront didn't exist.
+
+## My role
+
+Single developer working with the owner. I scoped, designed and shipped both the customer-facing storefront and the back-office inventory tools.
+
+## Architecture
+
+A **LAMP** application - PHP serving server-rendered pages from **MySQL** - chosen because the existing hosting was shared LAMP and the team needed something they could keep editing without me. Inventory writes are wrapped in transactions so concurrent stock changes never desync.
+
+## Key decisions & trade-offs
+
+- **Boring stack on purpose.** PHP + MySQL meant zero new infra and the client could find local maintainers.
+- **One source of truth for inventory.** The storefront and the back office both read and write to the same `stock` table; product pages reflect live availability.
+- **Progressive enhancement.** The storefront works without JavaScript; interactive bits (filters, cart) layer on top.
+
+## Outcome
+
+A working catalog + inventory system the owner can run themselves, with room to add an admin role and richer reports as the business grows.
