@@ -7,14 +7,17 @@ import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export default function HomePage() {
   const sorted = [...projects].sort((a, b) => b.year - a.year);
-  const featured = sorted.filter((p) => p.featured).slice(0, 3);
-  const others = sorted.filter((p) => !featured.includes(p)).slice(0, 3);
-  const showcase = [...featured.slice(0, 3), ...others].slice(0, 3);
+  const featured = sorted.filter((p) => p.featured);
+  const seen = new Set(featured.map((p) => p.slug));
+  const finalShowcase = [
+    ...featured,
+    ...sorted.filter((p) => !seen.has(p.slug)),
+  ].slice(0, 3);
 
   return (
     <>
-      <BentoHero featured={featured} />
-      <FeaturedProjects projects={showcase} />
+      <BentoHero />
+      <FeaturedProjects projects={finalShowcase} />
       <TechMarquee />
       <ContactCTA />
     </>

@@ -15,7 +15,9 @@ export function ContactCTA() {
         <div className="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-brand-accent/20 blur-3xl" aria-hidden />
         <div className="relative grid gap-8 p-10 sm:p-14 md:grid-cols-[1.4fr_1fr] md:items-center">
           <div className="space-y-4">
-            <EyebrowLabel index="08">What&apos;s next</EyebrowLabel>
+            <EyebrowLabel index="08" className="text-ink-muted">
+              What&apos;s next
+            </EyebrowLabel>
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-balance">
               Have a project in mind, or a role to discuss?
             </h2>

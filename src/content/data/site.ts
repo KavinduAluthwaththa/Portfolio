@@ -10,7 +10,7 @@ export const siteConfig = {
     "Full-stack developer building production web & mobile apps with Next.js, .NET and Flutter.",
   tagline:
     "Designing and shipping fast, accessible, and reliable digital products from idea to deployment.",
-  availability: "Available May 2026",
+  availability: "Available",
   currentlyDoing: [
     "Software engineering intern @ Innobot Health",
     "Part-time full-stack @ Viosu",

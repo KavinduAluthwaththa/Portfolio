@@ -25,14 +25,7 @@ export function SkillsGrid() {
           )}
           <div className="mt-5 flex flex-wrap gap-2">
             {group.skills.map((skill) => (
-              <TechChip
-                key={skill.name}
-                label={skill.name}
-                className={cn(
-                  skill.level === "primary" &&
-                    "border-brand/30 bg-brand/[0.06] text-brand"
-                )}
-              />
+              <TechChip key={skill.name} label={skill.name} />
             ))}
           </div>
         </GlassCard>

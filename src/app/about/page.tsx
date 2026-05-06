@@ -13,7 +13,6 @@ import { Timeline } from "@/components/sections/Timeline";
 import { SkillsGrid } from "@/components/sections/SkillsGrid";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { siteConfig } from "@/content/data/site";
-import { stats } from "@/content/data/stats";
 import { experience } from "@/content/data/experience";
 import { education } from "@/content/data/education";
 import profile from "../../../public/images/profile/kavindu.jpg";
@@ -83,24 +82,6 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-base/60 via-transparent to-transparent" />
               </div>
             </GlassCard>
-            <div className="grid grid-cols-2 gap-3">
-              {stats.map((stat) => (
-                <GlassCard
-                  key={stat.label}
-                  className="p-4 gradient-border interactive-card"
-                >
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-ink-faint">
-                    {stat.label}
-                  </div>
-                  <div className="mt-1 flex items-baseline gap-1 text-2xl font-semibold text-ink">
-                    {stat.value}
-                    {stat.suffix && (
-                      <span className="text-brand text-base">{stat.suffix}</span>
-                    )}
-                  </div>
-                </GlassCard>
-              ))}
-            </div>
           </div>
         </div>
       </Container>
@@ -112,8 +93,7 @@ export default function AboutPage() {
             A polyglot stack, grouped by where it lives.
           </h2>
           <p className="text-ink-muted max-w-2xl text-pretty">
-            I lead with the highlighted tools - the rest I&apos;ve shipped
-            with in real projects.
+            A polyglot toolkit, grouped by where it lives in the stack.
           </p>
         </div>
         <SkillsGrid />

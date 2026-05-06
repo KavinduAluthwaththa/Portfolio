@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -11,23 +10,44 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
+import type { IconType } from "react-icons";
+import {
+  SiDocker,
+  SiDotnet,
+  SiFlutter,
+  SiLaravel,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 import { Container } from "@/components/primitives/Container";
 import { GlassCard } from "@/components/primitives/GlassCard";
-import { CursorSpotlight } from "@/components/primitives/CursorSpotlight";
-import { TechChipList } from "@/components/primitives/TechChip";
 import { EyebrowLabel } from "@/components/primitives/EyebrowLabel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/content/data/site";
-import { stats } from "@/content/data/stats";
-import type { Project } from "#site/content";
 
-const STACK_GROUPS: { label: string; items: string[] }[] = [
-  { label: "Frontend", items: ["Next.js", "React", "Tailwind CSS"] },
-  { label: "Backend", items: [".NET", "Node.js", "Laravel"] },
-  { label: "Mobile", items: ["Flutter", "Dart"] },
-  { label: "Data", items: ["PostgreSQL", "Supabase", "MySQL"] },
+type LogoIcon = IconType | LucideIcon;
+
+const STACK_LOGOS: { icon: LogoIcon; label: string }[] = [
+  { icon: SiPython, label: "Python" },
+  { icon: SiNextdotjs, label: "Next.js" },
+  { icon: SiReact, label: "React" },
+  { icon: SiTypescript, label: "TypeScript" },
+  { icon: SiDotnet, label: ".NET" },
+  { icon: SiNodedotjs, label: "Node.js" },
+  { icon: SiFlutter, label: "Flutter" },
+  { icon: SiPostgresql, label: "PostgreSQL" },
+  { icon: SiTailwindcss, label: "Tailwind CSS" },
+  { icon: SiDocker, label: "Docker" },
+  { icon: SiLaravel, label: "Laravel" },
+  { icon: SiSupabase, label: "Supabase" },
 ];
 
 interface ActiveEngagement {
@@ -64,20 +84,13 @@ const ACTIVE_NOW: ActiveEngagement[] = [
 
 const EXPLORING = ["System design", "Data engineering", "AWS"];
 
-interface BentoHeroProps {
-  featured: Project[];
-}
-
-export function BentoHero({ featured }: BentoHeroProps) {
-  const top = featured[0];
-  const second = featured[1];
-
+export function BentoHero() {
   return (
     <section className="relative">
       <Container size="wide" className="pt-12 pb-16 sm:pt-16">
-        <div className="grid gap-4 lg:grid-cols-12 lg:grid-rows-[auto_auto] auto-rows-min">
-          <GlassCard className="lg:col-span-8 p-8 sm:p-10 lg:row-span-1 gradient-border">
-            <div className="flex flex-col gap-6">
+        <div className="grid gap-4 lg:grid-cols-12 lg:auto-rows-min">
+          <GlassCard className="lg:col-span-8 lg:row-span-2 p-8 sm:p-10 gradient-border flex flex-col">
+            <div className="flex flex-col gap-6 flex-1">
               <div className="flex items-center gap-3 flex-wrap">
                 <Badge variant="success">
                   <span className="h-1.5 w-1.5 rounded-full bg-status-available animate-pulse" />
@@ -98,7 +111,7 @@ export function BentoHero({ featured }: BentoHeroProps) {
                 {siteConfig.tagline} Currently engineering at Viosu, leading my
                 university capstone, and freelancing on the side.
               </p>
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
                 <Button asChild variant="brand" size="lg">
                   <Link href="/projects">
                     See my work <ArrowRight className="h-4 w-4" />
@@ -182,45 +195,21 @@ export function BentoHero({ featured }: BentoHeroProps) {
             </div>
           </GlassCard>
 
-          <GlassCard className="lg:col-span-4 p-6 sm:p-8 gradient-border">
-            <EyebrowLabel index="03">By the numbers</EyebrowLabel>
-            <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="text-[11px] font-mono uppercase tracking-wider text-ink-faint">
-                    {stat.label}
-                  </dt>
-                  <dd className="mt-1 flex items-baseline gap-1 text-2xl font-semibold text-ink">
-                    {stat.value}
-                    {stat.suffix && (
-                      <span className="text-brand text-lg">{stat.suffix}</span>
-                    )}
-                  </dd>
-                  {stat.hint && (
-                    <p className="text-[11px] text-ink-faint mt-0.5">
-                      {stat.hint}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </dl>
-          </GlassCard>
-
           <GlassCard className="lg:col-span-4 p-6 sm:p-8 flex flex-col gap-5 gradient-border">
             <div className="space-y-2">
-              <EyebrowLabel index="04">Stack</EyebrowLabel>
+              <EyebrowLabel index="03">Stack</EyebrowLabel>
               <p className="text-sm text-ink-muted">
                 The tools I reach for first when shipping product.
               </p>
             </div>
-            <div className="flex-1 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-              {STACK_GROUPS.map((group) => (
-                <div key={group.label} className="space-y-2">
-                  <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-ink-faint">
-                    <span className="h-px flex-1 bg-white/[0.06]" aria-hidden />
-                    {group.label}
-                  </div>
-                  <TechChipList items={group.items} size="sm" />
+            <div className="flex-1 grid grid-cols-4 gap-2">
+              {STACK_LOGOS.map(({ icon: Icon, label }) => (
+                <div
+                  key={label}
+                  title={label}
+                  className="group/logo aspect-square grid place-items-center rounded-lg border border-white/[0.06] bg-white/[0.03] text-ink-muted hover:text-ink hover:bg-white/[0.05] hover:border-white/[0.12] transition-colors"
+                >
+                  <Icon className="h-5 w-5" aria-label={label} />
                 </div>
               ))}
             </div>
@@ -231,80 +220,6 @@ export function BentoHero({ featured }: BentoHeroProps) {
               See full stack <ArrowRight className="h-3 w-3" />
             </Link>
           </GlassCard>
-
-          {top && (
-            <Link
-              href={`/projects/${top.slugAsParams}`}
-              className="lg:col-span-4 group block"
-            >
-              <CursorSpotlight className="h-full rounded-2xl">
-              <GlassCard className="h-full overflow-hidden gradient-border-hover transition-transform duration-300 group-hover:-translate-y-1">
-                {top.cover && (
-                  <div className="p-3 pb-0">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-base/60 ring-1 ring-white/[0.08] shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6)]">
-                      <Image
-                        src={top.cover.src}
-                        alt={top.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                        placeholder={top.cover.blurDataURL ? "blur" : undefined}
-                        blurDataURL={top.cover.blurDataURL}
-                      />
-                    </div>
-                  </div>
-                )}
-                <div className="p-6 pt-5 space-y-3">
-                  <EyebrowLabel index="05">Featured project</EyebrowLabel>
-                  <h3 className="text-xl font-semibold text-ink group-hover:text-brand transition-colors">
-                    {top.title}
-                  </h3>
-                  <p className="text-sm text-ink-muted line-clamp-2">
-                    {top.summary}
-                  </p>
-                  <TechChipList items={top.stack.slice(0, 4)} size="sm" />
-                </div>
-              </GlassCard>
-              </CursorSpotlight>
-            </Link>
-          )}
-
-          {second && (
-            <Link
-              href={`/projects/${second.slugAsParams}`}
-              className="lg:col-span-4 group block"
-            >
-              <CursorSpotlight className="h-full rounded-2xl">
-              <GlassCard className="h-full overflow-hidden gradient-border-hover transition-transform duration-300 group-hover:-translate-y-1">
-                {second.cover && (
-                  <div className="p-3 pb-0">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-base/60 ring-1 ring-white/[0.08] shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6)]">
-                      <Image
-                        src={second.cover.src}
-                        alt={second.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                        placeholder={second.cover.blurDataURL ? "blur" : undefined}
-                        blurDataURL={second.cover.blurDataURL}
-                      />
-                    </div>
-                  </div>
-                )}
-                <div className="p-6 pt-5 space-y-3">
-                  <EyebrowLabel index="06">Featured project</EyebrowLabel>
-                  <h3 className="text-xl font-semibold text-ink group-hover:text-brand transition-colors">
-                    {second.title}
-                  </h3>
-                  <p className="text-sm text-ink-muted line-clamp-2">
-                    {second.summary}
-                  </p>
-                  <TechChipList items={second.stack.slice(0, 4)} size="sm" />
-                </div>
-              </GlassCard>
-              </CursorSpotlight>
-            </Link>
-          )}
         </div>
       </Container>
     </section>

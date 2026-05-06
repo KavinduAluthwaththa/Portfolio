@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { useCommandPalette } from "./CommandPalette";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Work" },
   { href: "/writing", label: "Writing" },
@@ -48,12 +47,9 @@ export function FloatingNav() {
         <Link
           href="/"
           aria-label="Kavindu - home"
-          className="ml-2 mr-1 hidden sm:inline-flex items-center gap-2 px-2 py-1 text-sm font-mono text-ink hover:text-brand transition-colors"
+          className="ml-2 mr-1 hidden sm:inline-flex items-center px-2 py-1 text-sm font-mono text-ink hover:text-brand transition-colors"
         >
-          <span className="grid h-6 w-6 place-items-center rounded-md bg-brand-gradient text-base text-[11px] font-bold">
-            K
-          </span>
-          <span className="hidden md:inline">kavindu</span>
+          kavindu
         </Link>
         <div className="hidden sm:block h-5 w-px bg-white/[0.08]" aria-hidden />
         <ul className="flex items-center">
